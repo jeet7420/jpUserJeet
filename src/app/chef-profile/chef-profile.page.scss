@@ -1,0 +1,240 @@
+app-chef-profile {
+    ion-content{
+        section.profile-header {
+            width: 100%;
+            border-bottom: 8px solid #f7f7f7;
+            margin-bottom: 7px;
+            .item {
+                width: 100%;
+                display: flex;
+                div[slot="start"] {
+                    max-width: 80px;
+                    width: 100%;
+                    margin-right: 10px;
+                    .pp-container {
+                        width: 80px;
+                        height: 80px;
+                        background: red;
+                        border-radius: 50%;
+                    }
+                }
+                .info {
+                    width: 100%;
+                    h4 {
+                        margin: 0px;
+                        font-weight: 700;
+                        font-size: 1.3rem;
+                        color: #2d2d2d;
+                    }
+                    h5 {
+                        font-size: 0.95rem;
+                        margin-top: 3px;
+                        margin-bottom: 4px;
+                        color: #6e6e6e;
+                        font-weight: 300;
+                    }
+                    p {
+                        font-size: 0.85rem;
+                        margin: 5px 0 0;
+                        color: #6e6e6e;
+                        font-weight: 300;
+                    }
+                    .lang {
+                        color: #6e6e6e;
+                        font-size: 0.85rem;
+                        margin-top: 10px;
+                        b {
+                            margin-right: 5px;
+                        }
+                    }
+                }
+            }
+            ion-row {
+                width: 100%;
+                border: 1px dashed #6e6e6e;
+                border-left: unset;
+                border-right: unset;
+                margin-top: 15px;
+                margin-bottom: 15px;
+                padding: 3px 0 3px;
+                ion-col {
+                    text-align: center;
+                    font-size: 0.9rem;
+                    ion-list     {
+                        --padding-top: 0px;
+                        &:first-child {
+                            color: #2d2d2d;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            font-size: 0.9rem;
+                            ion-icon {
+                                margin-right: 4px;
+                            }
+                            img {
+                                margin-right: 4px;
+                            }
+                            span {
+                                margin-right: 3px;
+                                font-size: 1.1rem;
+                            }
+                        }
+                        &:last-child {
+                            margin-top: 5px;
+                            color: #6e6e6e;
+                            font-size: 0.8rem;
+                            ion-label {
+                                margin-top: 0px;
+                                font-weight: 500;
+                            }
+                            
+                        }
+                    }
+                }
+            }
+        }
+        section.content-list {
+            width: 100%;
+            padding: 0;
+            .accordion-main {
+                width: 100%;
+                padding-top: 7px;
+                .accordion-header {
+                    width: 100%;
+                    color: #2d2d2d;
+                    font-weight: 600;
+                    font-size: 1rem;
+                    &:after {
+                        content: "";
+                        width: 20px;
+                        height: 20px;
+                        position: absolute;
+                        right: 15px;
+                    }
+                }
+                .accordion-box {
+                    width: 100%;
+                    .list {
+                        width: 100%;
+                        display: flex;
+                        margin-top: 15px;
+                        div[slot="start"] {
+                            min-width: 100px;
+                            padding: 0 10px 0 0;
+                        }
+                        .content {
+                            width: 100%;
+                            padding-top: 7px;
+                            padding-bottom: 10px;
+                            h4 {
+                                margin: 0px;
+                                font-size: 0.9rem;
+                                color: #2d2d2d;
+                            }
+                            .info {
+                                width: 100%;
+                                display: flex;
+                                .left {
+                                    min-width: 150px;
+                                    width: 100%;
+                                    h5 {
+                                        font-size: 0.8rem;
+                                        margin: 5px 0 2px;
+                                        color: #6e6e6e;
+                                    }
+                                    .starts {
+                                        display: flex;
+                                        align-items: center;
+                                        float: left;
+                                        font-size: 0.8rem;
+                                        ion-icon.fill {
+                                            color: #f2b600;
+                                        }
+                                        ion-icon {
+                                            color: #2d2d2d;
+                                        }
+                                    }
+                                    .single-row {
+                                        display: flex;
+                                        align-items: center;
+                                        span {
+                                            font-size: 0.75rem;
+                                            padding-left: 5px;
+                                            color: #6e6e6e;
+                                        }
+                                    }
+                                }
+                                .right {
+                                    width: 100%;
+                                    text-align: right;
+                                    display: flex;
+                                    justify-content: flex-end;
+                                    align-items: center;
+                                    ion-label {
+                                        padding: 2px 5px;
+                                        border: 2px solid #00a651;
+                                        color: #00a651;
+                                        border-radius: 5px;
+                                        display: flex;
+                                        align-items: center;
+                                        font-size: 0.75rem;
+                                        text-transform: capitalize;
+                                        letter-spacing: 0.5px;
+                                        max-width: 64px;
+                                        width: 100%;
+                                        position: relative;
+                                        span {
+                                            text-align: left;
+                                            width: 30px;
+                                        }
+                                        ion-icon {
+                                            font-weight: 600;
+                                            font-size: 0.9rem;
+                                            position: absolute;
+                                            right: 4px;
+                                        }
+                                    }
+                                    ion-label.added {
+                                        padding: 2px 5px;
+                                        color: #fff;
+                                        background: #00a651;
+                                        text-align: center;
+                                        span {
+                                            width: 100%;
+                                            text-align: center;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .accordion-box.in {
+                    height: 100% !important;
+                    overflow: unset;
+                    transition: all 0.3s;
+                    opacity: 1;
+                }
+                .accordion-box.out {
+                    height: 0px !important;
+                    overflow: hidden;
+                    transition: all 0.3s;
+                    opacity: 0;
+                }
+            }
+        }
+    }
+    ion-footer {
+        background: #fff;
+        padding: 0;
+        ion-button {
+            width: 100%;
+            margin: 0px;
+            --border-radius: 0px;
+            --background: #00a651;
+            height: 45px;
+            font-size: 1.2rem;
+            letter-spacing: 0px;
+        }
+    }
+}

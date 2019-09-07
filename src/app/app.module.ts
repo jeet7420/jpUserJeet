@@ -9,10 +9,19 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+/*  Font - Awsome */
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import { far } from '@fortawesome/free-regular-svg-icons'
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { ZnodeAccordionDirective } from './directives/znode-accordion.directive'
+library.add(fas,far)// add all icons
+
+
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, ZnodeAccordionDirective],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule , FontAwesomeModule ],
   providers: [
     StatusBar,
     SplashScreen,

@@ -1,0 +1,74 @@
+app-signup {
+    ion-content {
+        section.logo {
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            padding-top: 72px;
+            grid-template-columns: 100%;
+            img{
+                max-width: 110px;
+                margin: 0 auto;
+            }
+            ion-label {
+                color: #c2313d;
+                text-align: center;
+                font-size: 1.6rem;
+                margin-top: 10px;
+                font-weight: 500;
+                padding-left: 15px;
+            }
+        }
+        section.content-main {
+            padding: 0 7px;
+            form{
+                ion-list {
+                    .heading-1 {
+                        text-align: center;
+                        font-weight: 500;
+                        width: 100%;
+                        p {
+                            font-size: 1.1rem;
+                            color: #969799;
+                        }
+                    }
+                    ion-item{
+                        ion-input {
+                            text-align: center;
+                            background: #f7f7f7;
+                            height: 45px;
+                            margin-top: 15px;
+                        }
+                        ion-button {
+                            width: 100%;
+                            min-height: 40px;
+                            font-weight: 300;
+                            font-size: 1rem;
+                            letter-spacing: 0px;
+                            text-transform: uppercase;
+                            margin: 15px 20px 0px;
+                            height: 45px;
+                        }
+                    }
+                }
+            }
+        }
+
+        ion-label.stick-bottom {
+            position: fixed;
+            bottom: 15px;
+            left: 0;
+            right: 0;
+        }
+        ion-label.sign-in {
+            text-align: center;
+            color: #969799;
+            font-size: 1rem;
+            font-weight: 400;
+            span {
+                color: #bf303d;
+            }
+        }
+        
+    }
+}
