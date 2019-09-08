@@ -1,0 +1,36 @@
+
+app-help {
+    ion-header {
+        ion-toolbar {
+            ion-title {
+                padding-left: 0px;
+            }
+        }
+    }
+    ion-content {
+        --padding-start: 0;
+        --padding-end: 0;
+        ion-list {
+            ion-item {
+                border-bottom: 1px dashed #bebebe;
+                margin-bottom: 10px;
+                padding-bottom: 10px;
+                ion-label {
+                    white-space: pre-line !important;
+                    h2 {
+                        color: #6e6e6e;
+                        margin-bottom: 10px !important;
+                        font-weight: 600 !important;
+                    }
+                    p {
+                        color: #bebebe !important;
+                    }
+                }
+                img {
+                    max-width: 20px;
+                }
+            }
+        }
+    }
+}
+

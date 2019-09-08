@@ -1,4 +1,6 @@
 import { Component , ViewChild } from '@angular/core';
+import { ModalController, AlertController } from '@ionic/angular';
+import { PopupsPage } from '../popups/popups.page';
 
 @Component({
   selector: 'app-tab1',
@@ -21,13 +23,15 @@ export class Tab1Page {
   //Configuration for each Slider
   sliderOffersOptions = {
     initialSlide: 0,
-    slidesPerView: 5,
+    slidesPerView: 6,
     autoplay:false,
     loop: false,
   };
 
   
   constructor(
+    public modalController: ModalController,
+    public alertController : AlertController
   ) {
     this.slider = {
       isBeginningSlide: true,
@@ -40,90 +44,37 @@ export class Tab1Page {
       isEndSlide: false,
       slidesItems: [
         {
-          "title"  : "Only on Swigguy",
-          "icon" : "logo-vimeo",
+          "title"  : "veg only",
+          "icon" : "vegonly.svg",
           "type" : "ionic" ,
           "id" : "0"
         },
         {
-          "title"  : "offers near you",
-          "icon" : "logo-vimeo",
+          "title"  : "local",
+          "icon" : "local.svg",
           "type" : "ionic" ,
           "id" : "1"
         },
         {
-          "title"  : "express delivery",
-          "icon" : "logo-vimeo",
+          "title"  : "north indian",
+          "icon" : "northindian.svg",
           "type" : "ionic" ,
           "id" : "2"
         },
         {
-          "title"  : "veg only",
-          "icon" : "logo-vimeo",
+          "title"  : "best in class",
+          "icon" : "bestinclass.svg",
           "type" : "ionic" ,
           "id" : "3"
-        },
-        {
-          "title"  : "pocket friendly",
-          "icon" : "logo-vimeo",
-          "type" : "ionic" ,
-          "id" : "4"
         },{
-          "title"  : "Only on Swigguy",
-          "icon" : "logo-vimeo",
+          "title"  : "new chefs",
+          "icon" : "newchef.svg",
           "type" : "ionic" ,
           "id" : "0"
         },
         {
-          "title"  : "offers near you",
-          "icon" : "logo-vimeo",
-          "type" : "ionic" ,
-          "id" : "1"
-        },
-        {
-          "title"  : "express delivery",
-          "icon" : "logo-vimeo",
-          "type" : "ionic" ,
-          "id" : "2"
-        },
-        {
-          "title"  : "veg only",
-          "icon" : "logo-vimeo",
-          "type" : "ionic" ,
-          "id" : "3"
-        },
-        {
           "title"  : "pocket friendly",
-          "icon" : "logo-vimeo",
-          "type" : "ionic" ,
-          "id" : "4"
-        },{
-          "title"  : "Only on Swigguy",
-          "icon" : "logo-vimeo",
-          "type" : "ionic" ,
-          "id" : "0"
-        },
-        {
-          "title"  : "offers near you",
-          "icon" : "logo-vimeo",
-          "type" : "ionic" ,
-          "id" : "1"
-        },
-        {
-          "title"  : "express delivery",
-          "icon" : "logo-vimeo",
-          "type" : "ionic" ,
-          "id" : "2"
-        },
-        {
-          "title"  : "veg only",
-          "icon" : "logo-vimeo",
-          "type" : "ionic" ,
-          "id" : "3"
-        },
-        {
-          "title"  : "pocket friendly",
-          "icon" : "logo-vimeo",
+          "icon" : "pocketfriendly.svg",
           "type" : "ionic" ,
           "id" : "4"
         }
@@ -131,4 +82,47 @@ export class Tab1Page {
     }
   }
 
+
+  async presentModal() {
+    const modal = await this.modalController.create({
+      component: PopupsPage
+    });
+    return await modal.present();
+  }
+
+
+
+  async confirmationPopup() {
+    const alert = await this.alertController.create({
+      cssClass: 'custom-alert-box confirmation-popup',
+      message: 'The default pricing includes one starter, one main course and one dessert,selecting more than one item in each section would add to the costs.',
+      buttons: [
+        {
+          text: 'Ok',
+          handler: () => {
+            console.log('Confirm Okay');
+          }
+        }
+      ]
+    });
+
+    await alert.present();
+  }
+
+  async generalPopup() {
+    const alert = await this.alertController.create({
+      cssClass: 'custom-alert-box booking-done-popup',
+      message: 'Your booking has been confirmed',
+      buttons: [
+        {
+          text: 'Ok',
+          handler: () => {
+            console.log('Confirm Okay');
+          }
+        }
+      ]
+    });
+
+    await alert.present();
+  }
 }

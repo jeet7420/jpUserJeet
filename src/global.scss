@@ -38,6 +38,15 @@
 @import "app/signup/signup.page.scss";
 @import "app/user-profile/user-profile.page.scss";
 @import "app/chef-profile/chef-profile.page.scss";
+@import "app/help/help.page.scss";
+@import "app/booking-history/booking-history.page.scss";
+@import "app/cost-breakup/cost-breakup.page.scss";
+
+/* Tabs SCSS */
+@import "app/tab2/tab2.page.scss";
+@import "app/tab3/tab3.page.scss";
+
+@import "app/popups/popups.page.scss";
 
 /* Global SCSS*/
 .mt-20{

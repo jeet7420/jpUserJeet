@@ -1,0 +1,15 @@
+
+ion-modal {
+    --background: transparent;
+}
+
+.modal-wrapper {
+    background: transparent !important;
+}
+
+app-popups {
+    --background: transparent;
+    ion-content {
+        --background: transparent;
+    }
+} 

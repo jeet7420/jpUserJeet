@@ -1,9 +1,43 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Tab Three
+        <ion-item lines="none">
+          <ion-thumbnail slot="start">
+            <img src="../../assets/images/user-pp.svg"/>
+          </ion-thumbnail>
+          <ion-label>
+            <h2>Meera</h2>
+            <p>
+              <span>7865243981</span>
+              <span>meera71@gmail.com</span>
+            </p>
+          </ion-label>
+          
+          <ion-button>edit</ion-button>
+        </ion-item>
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content class="ion-no-padding">
+  <ion-list>
+      <ion-item detail lines="none">
+        <ion-label>
+          <h2>Booking</h2>
+          <p>Current/Past Bookings</p>
+        </ion-label>
+      </ion-item>
+      <ion-item detail lines="none">
+        <ion-label>
+          <h2>Help</h2>
+          <p>FAQs & Links</p>
+        </ion-label>
+      </ion-item>
+      <ion-item detail lines="none">
+        <ion-label>
+          <h2>Logout</h2>
+          <p>Log out from JP app</p>
+        </ion-label>
+      </ion-item>
+  </ion-list>
+</ion-content>

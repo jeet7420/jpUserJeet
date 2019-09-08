@@ -1,12 +1,12 @@
 <ion-header>
   <ion-toolbar>
     <ion-title slot="start">
-      <ion-label class="currenct-static"><span>Now</span> <ion-icon name="arrow-round-forward"></ion-icon></ion-label>
-      <ion-label class="currenct-page">Home </ion-label>
+      <img src="../../assets/images/location-home.svg"/>
+      <ion-label class="currenct-page">Location</ion-label>
     </ion-title>
-    <ion-label slot="end">
-        <img src="../../assets/icon/offers-badge.jpg" />
-      <span>Offers</span>
+    <ion-label (click)="generalPopup();" slot="end">
+        <img src="../../assets/images/time.svg" />
+      <span>Time</span>
     </ion-label>
   </ion-toolbar>
 </ion-header>
@@ -25,7 +25,7 @@
           <!--<ion-icon *ngIf="s.type=='ionic'" name="{{s.icon}}"></ion-icon>-->
           <div class="offer-image">
             <span class="bg-high"></span>
-            <img src="../../assets/icon/offers-{{s.id}}.jpg">
+            <img src="../../assets/images/{{s.icon}}">
           </div>
           <span>{{s.title}}</span>
         </div>
@@ -34,75 +34,39 @@
 
     <div class="list-view">
       <h4>
-        200 Resturants
+        nearby chefs
       </h4>
       <div class="sort-filter">
-        <fa-icon icon="sliders-h"></fa-icon>
+        <img src="../../assets/images/filter.svg">
         <span>sort / filter</span>
       </div>
     </div>
     <ion-list class="p-list">
-      <ion-item lines="none">
-        <div class="box">
-          <div class="logo">
-              <img src="../../assets/products/product-0.jpg">
-              <span class="ads-badge">Ad</span>
-          </div>
-          <div class="detail">
-              <h5>the bake factory</h5>
-              <p>Continental, American, Fast Food </p>
-              <div class="offer">
-                  <img src="../../assets/icon/offers-badge-small.png" />
-                <span class="off">40%</span>
-                <span class="coupon">user copoun SWIGGY40</span>
-              </div>
-              <div class="bottom-detail flex-mode">
-                <div class="ratting">
-                  <ion-icon name="star"></ion-icon>
-                  <span>4.0</span>
-                </div>
-                <div class="posted-on">
-                  32 min
-                </div>
-                <div class="price">
-                  <span class="currency">$</span>
-                  <span class="ammount">250</span>
-                  <span class="for">for tow</span>
-                </div>
-              </div>
-          </div>
-        </div>
-      </ion-item>
-      <ion-item lines="none">
+        <ion-item lines="none">
           <div class="box">
-            <div class="logo">
+            <ion-thumbnail>
                 <img src="../../assets/products/product-0.jpg">
-                <span class="ads-badge">Ad</span>
-            </div>
+            </ion-thumbnail>
             <div class="detail">
-                <h5>the bake factory</h5>
-                <p>Continental, American, Fast Food </p>
+                <h5>Madhur Jaffrey</h5>
+                <p>Master Chef, Delhi </p>
                 <div class="offer">
-                  <img src="../../assets/icon/offers-badge-small.png" />
-                  <span class="off">40%</span>
-                  <span class="coupon">user copoun SWIGGY40</span>
+                  <img src="../../assets/images/food.svg" />
+                  <span class="off">Chicken Butter masala, Kheer</span>
                 </div>
                 <div class="bottom-detail flex-mode">
                   <div class="ratting">
                     <ion-icon name="star"></ion-icon>
-                    <span>4.0</span>
-                  </div>
-                  <div class="posted-on">
-                    32 min
+                    <span>4.5</span>
                   </div>
                   <div class="price">
-                    <span class="currency">$</span>
+                    <span class="currency">₹</span>
                     <span class="ammount">250</span>
-                    <span class="for">for tow</span>
                   </div>
                 </div>
             </div>
           </div>
         </ion-item>
+      
     </ion-list>
 </ion-content>

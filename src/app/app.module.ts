@@ -17,10 +17,16 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { ZnodeAccordionDirective } from './directives/znode-accordion.directive'
 library.add(fas,far)// add all icons
 
+import { Tab1Page } from "./tab1/tab1.page";
+import { PopupsPage } from "./popups/popups.page";
 
 @NgModule({
-  declarations: [AppComponent, ZnodeAccordionDirective],
-  entryComponents: [],
+  declarations: [AppComponent, ZnodeAccordionDirective,
+    PopupsPage
+  ],
+  entryComponents: [
+    PopupsPage
+  ],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule , FontAwesomeModule ],
   providers: [
     StatusBar,

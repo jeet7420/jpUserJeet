@@ -1,9 +1,114 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>cost-breakup</ion-title>
+    <ion-button class="custom-back-button">
+      <img src="assets/images/back-black.svg"/>
+    </ion-button>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-no-padding">
+    <ion-list class="chef-detail">
+        <ion-item lines="none">
+          <ion-avatar>
+            <img src="../../assets/images/chef-pp.jpg"/>
+          </ion-avatar>
+          <ion-label text-wrap>
+            <h2>Jacob Thomas</h2>
+            <p>Average Ratings 4.5 (50)</p>
+            <p>A-11, Sun Temple,Near manek chok, Delhi</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
 
+      <section class="addon-detail">
+        <ion-item lines="none">
+          <ion-label class="bold">Base Charges</ion-label>
+          <ion-note class="bold" slot="end">$ 10.00</ion-note>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-label class="addon-heading bold">Addon</ion-label>
+        </ion-item>
+        <ion-list class="addon-list">
+          <ion-item lines="none">
+              <ion-label>Extra Person Charges</ion-label>
+              <ion-note slot="end">₹ 10.00</ion-note>
+          </ion-item>
+          <ion-item lines="none">
+              <ion-label>Extra Starter Charges</ion-label>
+              <ion-note slot="end">₹ 10.00</ion-note>
+          </ion-item>
+          <ion-item lines="none">
+              <ion-label>Extra Main Course Dish Charges</ion-label>
+              <ion-note slot="end">₹ 10.00</ion-note>
+          </ion-item>
+          <ion-item lines="none">
+              <ion-label>Extra Dessert Charges</ion-label>
+              <ion-note slot="end">₹ 10.00</ion-note>
+          </ion-item>
+          <ion-item lines="none">
+              <ion-label>Extra Accompaniment Charges</ion-label>
+              <ion-note slot="end">₹ 10.00</ion-note>
+          </ion-item>
+          <ion-item lines="none" class="addon-total">
+              <ion-label class="bold">Total</ion-label>
+              <ion-note slot="end" class="bold">₹ 100.00</ion-note>
+          </ion-item>
+        </ion-list>
+     </section>
+
+     <section class="select-offer">
+        <ion-item lines="full">
+          <img src="../../assets/images/offer.svg" slot="start"/>
+          <ion-label class="bold">Select an offer</ion-label>
+        </ion-item>
+        <ion-list>
+          <ion-radio-group>
+            <ion-item lines="none">
+                <ion-radio   name="checkoffer" color="primary" slot="start"></ion-radio>
+                <ion-label>Early bird discount</ion-label>
+                <img src="../../assets/images/information.svg"/>
+            </ion-item>
+            <ion-item lines="none">
+                <ion-radio name="checkoffer" checked="true" color="primary" slot="start"></ion-radio>
+                <ion-label>First 3 orders</ion-label>
+                <img src="../../assets/images/information.svg"/>
+            </ion-item>
+          </ion-radio-group> 
+          <ion-item lines="none">
+            <ion-input type="text" placeholder="Add coupon code"></ion-input>
+            <ion-button slot="end" class="bg-less-button">APPLY</ion-button>
+          </ion-item>
+        </ion-list>
+     </section>
+     <section class="grand-total">
+      <ion-item lines="none">
+        <ion-label class="bold">Grand Total</ion-label>
+        <ion-note slot="end" class="bold">₹ 350.00</ion-note>
+      </ion-item>
+     </section>
+     <section class="general-info">
+        <ion-item lines="full">
+          <ion-label text-wrap>
+            <h4 class="bold">Address</h4>
+            <p>SF 3 Second Floor, Wadhwa Plaza 2, Dwarka Sector 10, Delhi 110075.</p>
+          </ion-label>
+          <ion-button slot="end" class="bg-less-button">CHANGE</ion-button>
+        </ion-item>
+        <ion-item lines="full">
+          <ion-label>
+            <h4 class="bold">Phone Number</h4>
+            <p>+91 9856201821</p>
+          </ion-label>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-label>
+            <h4 class="bold">Email Address</h4>
+            <p>myfood123@gmail.com</p>
+          </ion-label>
+        </ion-item>
+       </section>
 </ion-content>
+
+<ion-footer>
+  <ion-button>PAY ₹ 350.00</ion-button>
+</ion-footer>

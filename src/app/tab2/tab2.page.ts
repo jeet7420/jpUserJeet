@@ -6,7 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page {
-
-  constructor() {}
+  cart : any;
+  constructor() {
+    this.cart = [0,0,0,0,0,0,0,0];
+    console.log('length of this.cart' , this.cart.length);
+  }
 
 }
