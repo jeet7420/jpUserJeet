@@ -16,8 +16,6 @@ import { far } from '@fortawesome/free-regular-svg-icons'
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { ZnodeAccordionDirective } from './directives/znode-accordion.directive'
 library.add(fas,far)// add all icons
-
-import { Tab1Page } from "./tab1/tab1.page";
 import { PopupsPage } from "./popups/popups.page";
 
 @NgModule({

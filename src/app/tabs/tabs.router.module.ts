@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
+import { AuthGuard } from 'src/app/services/auth.guard';
 
 const routes: Routes = [
   {
@@ -8,24 +9,25 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'tab1',
+        path: 'home',
         children: [
           {
             path: '',
             loadChildren: () =>
-              import('../tab1/tab1.module').then(m => m.Tab1PageModule)
+              import('../home/home.module').then(m => m.HomePageModule)
           }
         ]
       },
       {
-        path: 'tab2',
+        path: 'cart',
         children: [
           {
             path: '',
             loadChildren: () =>
-              import('../tab2/tab2.module').then(m => m.Tab2PageModule)
+              import('../cart/cart.module').then(m => m.CartPageModule)
           }
-        ]
+        ],
+        canActivate: [AuthGuard]
       },
       {
         path: 'more',
@@ -56,7 +58,8 @@ const routes: Routes = [
             loadChildren: () =>
               import('../profile/profile.module').then(m => m.ProfilePageModule)
           }
-        ]
+        ],
+        canActivate: [AuthGuard]
       },
       {
         path: 'chef-profile',
@@ -70,14 +73,14 @@ const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: '/tabs/home',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
+    redirectTo: '/tabs/home',
     pathMatch: 'full'
   }
 ];

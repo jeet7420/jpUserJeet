@@ -17,7 +17,8 @@ const routes: Routes = [
   { path: 'cost-breakup', loadChildren: './cost-breakup/cost-breakup.module#CostBreakupPageModule' },
   { path: 'popups', loadChildren: './popups/popups.module#PopupsPageModule' },
   { path: 'cart', loadChildren: './cart/cart.module#CartPageModule' },  { path: 'edit-user-profile', loadChildren: './edit-user-profile/edit-user-profile.module#EditUserProfilePageModule' },
-  { path: 'profile', loadChildren: './profile/profile.module#ProfilePageModule' }
+  { path: 'profile', loadChildren: './profile/profile.module#ProfilePageModule' },
+  { path: 'home', loadChildren: './home/home.module#HomePageModule' }
 
 ];
 @NgModule({

@@ -13,7 +13,7 @@
             </p>
           </ion-label>
           
-          <ion-button routerLink="/tabs/tab3/edit-user-profile">edit</ion-button>
+          <ion-button routerLink="/tabs/profile/edit-user-profile">edit</ion-button>
         </ion-item>
     </ion-title>
   </ion-toolbar>
@@ -21,10 +21,28 @@
 
 <ion-content class="ion-no-padding">
   <ion-list>
-      <ion-item detail lines="none" routerLink="/tabs/tab3/booking-history">
+      <ion-item detail lines="none" routerLink="/tabs/profile/booking-history">
         <ion-label>
           <h2>Bookings</h2>
           <p>Current/Past Bookings</p>
+        </ion-label>
+      </ion-item>
+      <ion-item detail lines="none">
+        <ion-label>
+          <h2>Addresses</h2>
+          <p>Add and remove saved addresses</p>
+        </ion-label>
+      </ion-item>
+      <ion-item detail lines="none">
+        <ion-label>
+          <h2>Refferals</h2>
+          <p>Invite your friends to earn free meals </p>
+        </ion-label>
+      </ion-item>
+      <ion-item detail lines="none">
+        <ion-label>
+          <h2>App Settings</h2>
+          <p>Change settings for JP app </p>
         </ion-label>
       </ion-item>
       <ion-item detail lines="none" (click) = "onLogoutClick()">
