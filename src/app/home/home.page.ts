@@ -1,15 +1,13 @@
-import { Component , ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ModalController, AlertController } from '@ionic/angular';
 import { PopupsPage } from '../popups/popups.page';
 
 @Component({
-  selector: 'app-tab1',
-  templateUrl: 'tab1.page.html',
-  styleUrls: ['tab1.page.scss']
+  selector: 'app-home',
+  templateUrl: './home.page.html',
+  styleUrls: ['./home.page.scss'],
 })
-export class Tab1Page {
-
-
+export class HomePage implements OnInit {
   slider: any;
   //Configuration for each Slider
   sliderOptions = {
@@ -125,4 +123,8 @@ export class Tab1Page {
 
     await alert.present();
   }
+
+  ngOnInit() {
+  }
+
 }

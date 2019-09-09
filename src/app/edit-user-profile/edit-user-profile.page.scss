@@ -1,0 +1,130 @@
+app-edit-user-profile {
+    ion-content {
+        section.pp-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+            margin-bottom: 30px;
+            .profile-pic {
+                .outer-cir {
+                    width: 175px;
+                    height: 175px;
+                    .inner-cir { 
+                        width: 155px;
+                        height: 155px;
+                        .pic {
+                            width: 140px;
+                            height: 140px;
+                            position: relative;
+                            border-radius: 100%;
+                            .camera {
+                                display: block;
+                                position: absolute;
+                                bottom: 7px;
+                                right: 7px;
+                                border-radius: 50%;
+                                border: 3px solid #fff;
+                                width: 35px;
+                                height: 35px;
+                                background-color: #ffa53b !important;
+                            }
+                        }
+                    }
+                }
+                .cir {
+                    border: 2px solid #bebebe;
+                    border-radius: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+        }
+
+        section.form-container {
+            width: 100%;
+            padding: 0 20px;
+            ion-list {
+                ion-label.heading-1 {
+                    text-align: center;
+                    width: 100%;
+                    justify-content: center;
+                    display: flex;
+                    font-size: 1.2rem;
+                    margin-bottom: 5px;
+                }
+                ion-item {
+                    display: block;
+                    --inner-padding-top: 20px;
+                    ion-label {
+                        float: left;
+                        position: absolute;
+                        top: 13px;
+                        z-index: 77;
+                        padding-left: 10px;
+                        background: #fff;
+                        margin: 0px;
+                        padding: 0 10px;
+                        text-transform: uppercase;
+                        font-size: 0.7rem !important;
+                        left: 17px;
+                        font-weight: 100;
+                        letter-spacing: 1px;
+                        color: #969799 !important;
+                    }
+                    .input-enc {
+                        width: 100%;
+                        background: #bebebe;
+                        padding: 2px;
+                        border-radius: 6px;
+                        ion-input {
+                            border-radius: 5px;
+                            font-size: 1rem;
+                            color: #6e6e6e;
+                            --padding-start: 15px;
+                            --padding-top: 12px;
+                            --padding-bottom: 10px;
+                            font-weight: 300;
+                            background: #fff;
+                        }
+                    }
+                    .high-grad {
+                        background: linear-gradient(102turn, #bf303d, #ff7b41);
+                        ion-input {
+                            --padding-end: 45px;
+                        }
+                        ion-input:after {
+                            content: "";
+                            position: absolute;
+                            right: 8px;
+                            height: 30px;
+                            width: 30px;
+                        }
+
+                    }
+                    
+                    &.button {
+                        margin-top: 10px;
+                        ion-button {
+                            width: 100%;
+                            font-size: 1rem;
+                            text-transform: capitalize;
+                            font-weight: 500;
+                            --background: #2d2d2d;
+                            height: 35px;
+                            --background-activated: #2d2d2d;
+                            --background-focused: #2d2d2d;
+                            --background-hover: #2d2d2d;
+                        }
+                    }
+                    
+                }
+    
+            }            
+        }
+
+    }
+} 
+

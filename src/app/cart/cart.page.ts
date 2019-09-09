@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CartPage implements OnInit {
 
-  constructor() { }
+  cart: any;
+  constructor() {
+    this.cart = [0];
+    console.log('length of this.cart', this.cart.length);
+  }
+
+
+  paymentModeChange() {
+    console.log("Only Online payment mode is available at the moment"); // to be converted to alert
+  }
 
   ngOnInit() {
+
   }
 
 }

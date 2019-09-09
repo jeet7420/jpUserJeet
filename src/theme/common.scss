@@ -1,5 +1,5 @@
 /* common bgs */
-app-splash , app-verfification-phone , app-opt {
+app-splash , app-opt, app-login {
     ion-content{
         --background: url("assets/bgs/bg-main.png")  center center / cover ;
     }
@@ -25,7 +25,23 @@ app-signup {
     }
 }
 
-app-user-profile {
+// app-user-profile {
+//     ion-content {
+//         section.form-container {
+//             ion-list {
+//                 ion-item {
+//                     .high-grad {
+//                         ion-input:after {
+//                             background: url("assets/images/verified.svg") center center / 70% no-repeat;
+//                         }
+//                     }
+//                 }
+//             }            
+//         }
+//     }
+// }
+
+app-edit-user-profile {
     ion-content {
         section.form-container {
             ion-list {
