@@ -28,12 +28,43 @@ const routes: Routes = [
         ]
       },
       {
-        path: 'tab3',
+        path: 'more',
         children: [
           {
             path: '',
             loadChildren: () =>
-              import('../tab3/tab3.module').then(m => m.Tab3PageModule)
+              import('../help/help.module').then(m => m.HelpPageModule)
+          }
+
+        ]
+      },
+      {
+        path: 'profile',
+        children: [
+          {
+            path: 'edit-user-profile',
+            loadChildren: () =>
+              import('../edit-user-profile/edit-user-profile.module').then(m => m.EditUserProfilePageModule)
+          },
+          {
+            path: 'booking-history',
+            loadChildren: () =>
+              import('../booking-history/booking-history.module').then(m => m.BookingHistoryPageModule)
+          },
+          {
+            path: '',
+            loadChildren: () =>
+              import('../profile/profile.module').then(m => m.ProfilePageModule)
+          }
+        ]
+      },
+      {
+        path: 'chef-profile',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../chef-profile/chef-profile.module').then(m => m.ChefProfilePageModule)
           }
         ]
       },
@@ -55,4 +86,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class TabsPageRoutingModule {}
+export class TabsPageRoutingModule { }

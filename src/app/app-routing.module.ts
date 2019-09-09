@@ -16,7 +16,9 @@ const routes: Routes = [
   { path: 'booking-history', loadChildren: './booking-history/booking-history.module#BookingHistoryPageModule' },
   { path: 'cost-breakup', loadChildren: './cost-breakup/cost-breakup.module#CostBreakupPageModule' },
   { path: 'popups', loadChildren: './popups/popups.module#PopupsPageModule' },
-  { path: 'cart', loadChildren: './cart/cart.module#CartPageModule' }
+  { path: 'cart', loadChildren: './cart/cart.module#CartPageModule' },  { path: 'edit-user-profile', loadChildren: './edit-user-profile/edit-user-profile.module#EditUserProfilePageModule' },
+  { path: 'profile', loadChildren: './profile/profile.module#ProfilePageModule' }
+
 ];
 @NgModule({
   imports: [
