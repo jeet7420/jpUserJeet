@@ -7,7 +7,6 @@ const routes: Routes = [
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
   },
   { path: 'splash', loadChildren: './splash/splash.module#SplashPageModule' },
-  { path: 'verfification-phone', loadChildren: './verfification-phone/verfification-phone.module#VerfificationPhonePageModule' },
   { path: 'opt', loadChildren: './opt/opt.module#OptPageModule' },
   { path: 'signup', loadChildren: './signup/signup.module#SignupPageModule' },
   { path: 'chef-profile', loadChildren: './chef-profile/chef-profile.module#ChefProfilePageModule' },
@@ -16,9 +15,11 @@ const routes: Routes = [
   { path: 'booking-history', loadChildren: './booking-history/booking-history.module#BookingHistoryPageModule' },
   { path: 'cost-breakup', loadChildren: './cost-breakup/cost-breakup.module#CostBreakupPageModule' },
   { path: 'popups', loadChildren: './popups/popups.module#PopupsPageModule' },
-  { path: 'cart', loadChildren: './cart/cart.module#CartPageModule' },  { path: 'edit-user-profile', loadChildren: './edit-user-profile/edit-user-profile.module#EditUserProfilePageModule' },
+  { path: 'cart', loadChildren: './cart/cart.module#CartPageModule' },
+  { path: 'edit-user-profile', loadChildren: './edit-user-profile/edit-user-profile.module#EditUserProfilePageModule' },
   { path: 'profile', loadChildren: './profile/profile.module#ProfilePageModule' },
-  { path: 'home', loadChildren: './home/home.module#HomePageModule' }
+  { path: 'home', loadChildren: './home/home.module#HomePageModule' },
+  { path: 'login', loadChildren: './login/login.module#LoginPageModule' }
 
 ];
 @NgModule({

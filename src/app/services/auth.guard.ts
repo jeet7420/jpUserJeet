@@ -11,7 +11,7 @@ export class AuthGuard implements CanActivate {
 
   async canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
     console.log("inside auth guard service");
-    this.router.navigate(['/verfification-phone'], {
+    this.router.navigate(['/login'], {
       queryParams: {
         redirect: state.url
       }
