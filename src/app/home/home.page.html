@@ -42,14 +42,14 @@
     </div>
   </div>
   <ion-list class="p-list">
-    <ion-item lines="none">
+    <ion-item lines="none" *ngFor = "let chef of availableChefs" (click) = "openChefDetails()">
       <div class="box">
         <ion-thumbnail>
           <img src="../../assets/products/product-0.jpg">
         </ion-thumbnail>
         <div class="detail">
-          <h5>Madhur Jaffrey</h5>
-          <p>Master Chef, Delhi </p>
+          <h5>{{chef?.chefFullName}}</h5>
+          <p>{{chef?.comments}}</p>
           <div class="offer">
             <img src="../../assets/images/food.svg" />
             <span class="off">Chicken Butter masala, Kheer</span>
@@ -57,11 +57,7 @@
           <div class="bottom-detail flex-mode">
             <div class="ratting">
               <ion-icon name="star"></ion-icon>
-              <span>4.5</span>
-            </div>
-            <div class="price">
-              <span class="currency">₹</span>
-              <span class="ammount">250</span>
+              <span>{{chef?.averageRating}}</span>
             </div>
           </div>
         </div>

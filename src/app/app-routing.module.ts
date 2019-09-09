@@ -7,7 +7,6 @@ const routes: Routes = [
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
   },
   { path: 'splash', loadChildren: './splash/splash.module#SplashPageModule' },
-  { path: 'opt', loadChildren: './opt/opt.module#OptPageModule' },
   { path: 'signup', loadChildren: './signup/signup.module#SignupPageModule' },
   { path: 'chef-profile', loadChildren: './chef-profile/chef-profile.module#ChefProfilePageModule' },
   { path: 'user-profile', loadChildren: './user-profile/user-profile.module#UserProfilePageModule' },
@@ -19,7 +18,9 @@ const routes: Routes = [
   { path: 'edit-user-profile', loadChildren: './edit-user-profile/edit-user-profile.module#EditUserProfilePageModule' },
   { path: 'profile', loadChildren: './profile/profile.module#ProfilePageModule' },
   { path: 'home', loadChildren: './home/home.module#HomePageModule' },
-  { path: 'login', loadChildren: './login/login.module#LoginPageModule' }
+  { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
+  { path: 'otp', loadChildren: './otp/otp.module#OtpPageModule' }
+
 
 ];
 @NgModule({
