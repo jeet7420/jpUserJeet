@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController, AlertController } from '@ionic/angular';
 import { PopupsPage } from '../popups/popups.page';
+import { Chef } from '../modals/Chef';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -9,11 +11,12 @@ import { PopupsPage } from '../popups/popups.page';
 })
 export class HomePage implements OnInit {
   slider: any;
+  availableChefs: Chef[];
   //Configuration for each Slider
   sliderOptions = {
     initialSlide: 0,
     slidesPerView: 2,
-    autoplay:true,
+    autoplay: true,
     loop: true,
   };
 
@@ -22,19 +25,18 @@ export class HomePage implements OnInit {
   sliderOffersOptions = {
     initialSlide: 0,
     slidesPerView: 6,
-    autoplay:false,
+    autoplay: false,
     loop: false,
   };
 
-  
-  constructor(
-    public modalController: ModalController,
-    public alertController : AlertController
-  ) {
+
+  constructor(public modalController: ModalController,
+    public alertController: AlertController,
+    private router: Router) {
     this.slider = {
       isBeginningSlide: true,
       isEndSlide: false,
-      slidesItems: [ 0 , 0 ,  0]
+      slidesItems: [0, 0, 0]
     }
 
     this.sliderOffers = {
@@ -42,42 +44,45 @@ export class HomePage implements OnInit {
       isEndSlide: false,
       slidesItems: [
         {
-          "title"  : "veg only",
-          "icon" : "vegonly.svg",
-          "type" : "ionic" ,
-          "id" : "0"
+          "title": "veg only",
+          "icon": "vegonly.svg",
+          "type": "ionic",
+          "id": "0"
         },
         {
-          "title"  : "local",
-          "icon" : "local.svg",
-          "type" : "ionic" ,
-          "id" : "1"
+          "title": "local",
+          "icon": "local.svg",
+          "type": "ionic",
+          "id": "1"
         },
         {
-          "title"  : "north indian",
-          "icon" : "northindian.svg",
-          "type" : "ionic" ,
-          "id" : "2"
+          "title": "north indian",
+          "icon": "northindian.svg",
+          "type": "ionic",
+          "id": "2"
         },
         {
-          "title"  : "best in class",
-          "icon" : "bestinclass.svg",
-          "type" : "ionic" ,
-          "id" : "3"
-        },{
-          "title"  : "new chefs",
-          "icon" : "newchef.svg",
-          "type" : "ionic" ,
-          "id" : "0"
+          "title": "best in class",
+          "icon": "bestinclass.svg",
+          "type": "ionic",
+          "id": "3"
+        }, {
+          "title": "new chefs",
+          "icon": "newchef.svg",
+          "type": "ionic",
+          "id": "0"
         },
         {
-          "title"  : "pocket friendly",
-          "icon" : "pocketfriendly.svg",
-          "type" : "ionic" ,
-          "id" : "4"
+          "title": "pocket friendly",
+          "icon": "pocketfriendly.svg",
+          "type": "ionic",
+          "id": "4"
         }
       ]
     }
+
+    this.getAvailableChefs();
+
   }
 
 
@@ -125,6 +130,35 @@ export class HomePage implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+
+  getAvailableChefs() {
+    this.availableChefs = [{
+      chefFullName: "Jacob Thomas",
+      comments: "Mater Chef, Delhi",
+      averageRating: 4.3,
+      bestPrepList: ["Chicken Butter masala", "kheer"]
+
+    },
+    {
+      chefFullName: "Milind Kumar",
+      comments: "Ravishing Desserts",
+      averageRating: 4.1,
+      bestPrepList: ["Double ka Meetha", "kheer"]
+
+    },
+    {
+      chefFullName: "Altaf Azhar",
+      comments: "Non veg Paradise",
+      averageRating: 4.1,
+      bestPrepList: ["Mutton keema", "Chicken Rezala"]
+
+    }];
+  }
+
+  openChefDetails() {
+    this.router.navigateByUrl('/tabs/chef-profile');
   }
 
 }

@@ -62,10 +62,10 @@
               <img src="assets/products/product-0.jpg">
             </div>
             <div class="content">
-              <h4>Poori With Tomato And Cookies for Startert</h4>
+              <h4>Fries</h4>
               <div class="info">
-                <div class="left">
-                    <h5>In Startert</h5>
+                <!-- <div class="left">
+                    <h5>In Starter</h5>
                     <div class="single-row">
                       <div class="starts">
                         <ion-icon name="star" class="fill"></ion-icon>
@@ -76,10 +76,15 @@
                       </div>
                       <span>33 Votes</span>
                     </div>
-                </div>
+                </div> -->
                 <div class="right">
-                  <ion-label class="add-btn">
-                    <span>Add</span>
+                  <ion-label >
+                    <span>+2</span>
+                    <ion-icon name="remove"></ion-icon>
+                  </ion-label> 
+                  
+                  <ion-label >
+                    <span>-2</span>
                     <ion-icon name="add"></ion-icon>
                   </ion-label>
                 </div>
@@ -150,6 +155,6 @@
 </ion-content>
 
 <ion-footer>
-  <ion-button class="full-wdith-button">continue to cart</ion-button>
+  <ion-button class="full-wdith-button" (click) = "continueToCart()">continue to cart</ion-button>
 </ion-footer>
 

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
@@ -17,6 +18,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { ZnodeAccordionDirective } from './directives/znode-accordion.directive'
 library.add(fas,far)// add all icons
 import { PopupsPage } from "./popups/popups.page";
+import { IonicStorageModule } from '@ionic/storage';
 
 @NgModule({
   declarations: [AppComponent, ZnodeAccordionDirective,
@@ -25,7 +27,10 @@ import { PopupsPage } from "./popups/popups.page";
   entryComponents: [
     PopupsPage
   ],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule , FontAwesomeModule ],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule 
+    , FontAwesomeModule
+    , HttpClientModule
+    , IonicStorageModule.forRoot({ name: '__jppdb' }),  ],
   providers: [
     StatusBar,
     SplashScreen,
