@@ -75,35 +75,43 @@
           <span class="price">300.00</span>
         </ion-label>
       </ion-item>
-      <ion-item lines="none">
-        <ion-label>
-          <h2>ADDRESS</h2>
-          <div class="address-detail">
-            <img src="../../assets/images/verified.svg" />
-            <p>A-11, Sun tample, Near Manek chok, Delhi</p>
-          </div>
-        </ion-label>
-        <ion-label class="address-change" slot="end">
-          change
-        </ion-label>
-      </ion-item>
+      
     </ion-list>
 
-    <ion-row class="payment-row">
-      <ion-col (click)="paymentModeChange()">
-        <h3>PAYMENT MODE</h3>
-        <h2>Online Payment</h2>
-        <p>CHANGE</p>
-      </ion-col>
-      <ion-col>
-        <ion-item lines="none">
-          <ion-label>
-            <h2>Place Order</h2>
-            <p>Your total is ₹250</p>
-          </ion-label>
-          <ion-icon slot="end" name="arrow-forward"></ion-icon>
-        </ion-item>
-      </ion-col>
-    </ion-row>
+    <ion-grid class="footer-fixed ">
+      <ion-row class="address-bar">
+        <ion-col>
+          <ion-item lines="none">
+            <ion-label>
+              <h2>ADDRESS</h2>
+              <div class="address-detail">
+                <img src="../../assets/images/verified.svg" />
+                <p>A-11, Sun tample, Near Manek chok, Delhi</p>
+              </div>
+            </ion-label>
+            <ion-label class="address-change" slot="end">
+              change
+            </ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row class="payment-row">
+        <ion-col (click)="paymentModeChange()">
+          <h3>PAYMENT MODE</h3>
+          <h2>Online Payment</h2>
+          <p>CHANGE</p>
+        </ion-col>
+        <ion-col>
+          <ion-item lines="none">
+            <ion-label>
+              <h2>Place Order</h2>
+              <p>Your total is ₹250</p>
+            </ion-label>
+            <ion-icon slot="end" name="arrow-forward"></ion-icon>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    
   </div>
 </ion-content>

@@ -9,7 +9,7 @@ export class CartPage implements OnInit {
 
   cart: any;
   constructor() {
-    this.cart = [0];
+    this.cart = [];
     console.log('length of this.cart', this.cart.length);
   }
 

@@ -38,6 +38,9 @@ app-signup {
                             background: #f7f7f7;
                             height: 45px;
                             margin-top: 15px;
+                            &.has-focus   {
+                                --placeholder-opacity:0;
+                            }
                         }
                         ion-button {
                             width: 100%;

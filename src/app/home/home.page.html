@@ -10,7 +10,7 @@
     </ion-label>
   </ion-toolbar>
 </ion-header>
-
+ 
 <ion-content>
 
   <ion-slides [options]="sliderOptions" class="promotion-slider">
@@ -43,18 +43,17 @@
   </div>
   <ion-list class="p-list">
     <ion-item lines="none">
-      <div class="box">
-        <ion-thumbnail>
-          <img src="../../assets/products/product-0.jpg">
-        </ion-thumbnail>
-        <div class="detail">
-          <h5>Madhur Jaffrey</h5>
-          <p>Master Chef, Delhi </p>
-          <div class="offer">
-            <img src="../../assets/images/food.svg" />
-            <span class="off">Chicken Butter masala, Kheer</span>
-          </div>
-          <div class="bottom-detail flex-mode">
+      <ion-thumbnail slot="start">
+        <img src="../../assets/products/product-0.jpg">
+      </ion-thumbnail>
+      <ion-label class="detail" text-wrap>
+        <h5>Madhur Jaffrey</h5>
+        <p>Master Chef, Delhi </p>
+        <ion-text class="offer">
+          <img src="../../assets/images/food.svg" />
+          <span class="off">Chicken Butter masala, Kheer</span>
+        </ion-text>
+        <div class="bottom-detail flex-mode">
             <div class="ratting">
               <ion-icon name="star"></ion-icon>
               <span>4.5</span>
@@ -64,9 +63,9 @@
               <span class="ammount">250</span>
             </div>
           </div>
-        </div>
-      </div>
-    </ion-item>
+      </ion-label>
+      
+   </ion-item>
 
   </ion-list>
 </ion-content>

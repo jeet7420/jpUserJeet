@@ -1,0 +1,82 @@
+app-otp {
+    ion-content {
+        section.logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 72px;
+            img{
+                max-width: 110px;
+            }
+        }
+        section.content-main {
+            padding: 0 40px;
+            margin-top: 28px;
+            form {
+                background: transparent;
+                .heading-1 {
+                    color: var(--ion-input-text-color);
+                    font-size: 1.2rem;
+                    margin-bottom: 20px;
+                    justify-content: center;
+                    display: flex;
+                    text-align: center;
+                }
+                ion-list {
+                    margin-bottom: 0px;
+                    background: transparent;
+
+                    ion-item {
+                        --background: transparent;
+                        color: #fff;
+                        display: flex;
+                        align-items: center;
+                        --border-color: transparent;
+                        ion-input { 
+                            border-bottom: 1px solid #fff;
+                            height: 33px;
+                            --padding-start: 5px !important;
+                            --padding-end: 5px;
+                            font-size: 0.9rem;
+                            color: var(--ion-input-text-color);
+                            text-align: center;
+                            font-size: 2.1rem;
+                        }
+                        ion-label.resend-opt {
+                            text-align: center;
+                            font-size: 1.1rem;
+                            font-weight: 300;
+                        }
+                        ion-button {
+                            margin: 0 auto;
+                            width: 100%;
+                            color: var(--ion-color-button-text);
+                            --color-activated:var(--ion-color-button-text);
+                            --background: var(--ion-color-button-background);
+                            --background-activated: var(--ion-color-button-background);
+                            --background-focused: var(--ion-color-button-background);
+                            --background-hover: var(--ion-color-button-background);
+                            min-height: 40px;
+                            font-weight: 600;
+                            font-size: 1.1rem;
+                            letter-spacing: 0px;
+                            text-transform: uppercase;
+                        }
+                       
+                    } 
+                    ion-item.group-inputs {
+                        display: flex;
+                        justify-content: center;
+                        ion-input   {
+                            margin: 0 9px;
+                            --background: transparent;
+                            --background-activated: transparent;
+                            --background-focused: transparent;
+                            --background-hover: transparent;
+                        }
+                    }                  
+                }
+            }
+        }
+    }
+}

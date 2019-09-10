@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule , CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 
@@ -16,21 +16,28 @@ import { far } from '@fortawesome/free-regular-svg-icons'
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { ZnodeAccordionDirective } from './directives/znode-accordion.directive'
 library.add(fas,far)// add all icons
-import { PopupsPage } from "./popups/popups.page";
+
+import { PopupIngredientsPage } from './popup-ingredients/popup-ingredients.page';
+
+// Import ionic-rating module
+import { IonicRatingModule } from 'ionic-rating';
 
 @NgModule({
-  declarations: [AppComponent, ZnodeAccordionDirective,
-    PopupsPage
+  declarations: [
+    AppComponent, 
+    ZnodeAccordionDirective,
+    PopupIngredientsPage
   ],
   entryComponents: [
-    PopupsPage
+    PopupIngredientsPage
   ],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule , FontAwesomeModule ],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule , FontAwesomeModule , IonicRatingModule ,  ],
   providers: [
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule {}

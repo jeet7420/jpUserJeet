@@ -33,7 +33,7 @@
 @import "theme/common.scss";
 /* Pages */
 @import "app/splash/splash.page.scss";
-@import "app/opt/opt.page.scss";
+@import "app/otp/otp.page.scss";
 @import "app/signup/signup.page.scss";
 @import "app/user-profile/user-profile.page.scss";
 @import "app/chef-profile/chef-profile.page.scss";
@@ -43,6 +43,8 @@
 @import "app/login/login.page.scss";
 
 @import "app/edit-user-profile/edit-user-profile.page.scss";
+
+@import "app/popup-ingredients/popup-ingredients.page.scss";
 
 /* Tabs SCSS */
 @import "app/profile/profile.page.scss";

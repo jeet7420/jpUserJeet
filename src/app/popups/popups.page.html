@@ -1,13 +1,25 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title> Popups </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
 <ion-content>
-  <div class="cus-alert-modal confirmation-popup">
-      <div class="logo">
-        <img src="../../assets/images/cost.svg"/>
-      </div>
-
-      <div class="content">The default pricing includes one starter, one main course and one dessert,selecting more than one item in each section would add to the costs.</div>
-      
-      <div class="footer">
-        <ion-button>Ok</ion-button>
-      </div>  
-  </div>
+  <ion-item-group>
+    <ion-item lines="full">
+      <ion-button (click)="confirmationPopup()" > 
+        Popup Confirmation 1
+      </ion-button>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-button (click)="generalPopup()" > 
+        Popup Confirmation 2
+      </ion-button>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-button (click)="detailPopup()" > 
+        Popup Detail
+      </ion-button>
+    </ion-item>
+  </ion-item-group>
 </ion-content>

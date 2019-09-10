@@ -17,7 +17,7 @@ export class AppComponent {
     private nav : NavController
  
   ) {
-    // this.nav.navigateRoot('chef-profile')
+    this.nav.navigateRoot('cart') 
     this.initializeApp();
   }
  

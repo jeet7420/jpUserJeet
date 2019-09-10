@@ -93,136 +93,6 @@ app-chef-profile {
                 }
             }
         }
-        section.content-list {
-            width: 100%;
-            padding: 0;
-            .accordion-main {
-                width: 100%;
-                padding-top: 7px;
-                .accordion-header {
-                    width: 100%;
-                    color: #2d2d2d;
-                    font-weight: 600;
-                    font-size: 1rem;
-                    &:after {
-                        content: "";
-                        width: 20px;
-                        height: 20px;
-                        position: absolute;
-                        right: 15px;
-                    }
-                }
-                .accordion-box {
-                    width: 100%;
-                    .list {
-                        width: 100%;
-                        display: flex;
-                        margin-top: 15px;
-                        div[slot="start"] {
-                            min-width: 100px;
-                            padding: 0 10px 0 0;
-                        }
-                        .content {
-                            width: 100%;
-                            padding-top: 7px;
-                            padding-bottom: 10px;
-                            h4 {
-                                margin: 0px;
-                                font-size: 0.9rem;
-                                color: #2d2d2d;
-                            }
-                            .info {
-                                width: 100%;
-                                display: flex;
-                                .left {
-                                    min-width: 150px;
-                                    width: 100%;
-                                    h5 {
-                                        font-size: 0.8rem;
-                                        margin: 5px 0 2px;
-                                        color: #6e6e6e;
-                                    }
-                                    .starts {
-                                        display: flex;
-                                        align-items: center;
-                                        float: left;
-                                        font-size: 0.8rem;
-                                        ion-icon.fill {
-                                            color: #f2b600;
-                                        }
-                                        ion-icon {
-                                            color: #2d2d2d;
-                                        }
-                                    }
-                                    .single-row {
-                                        display: flex;
-                                        align-items: center;
-                                        span {
-                                            font-size: 0.75rem;
-                                            padding-left: 5px;
-                                            color: #6e6e6e;
-                                        }
-                                    }
-                                }
-                                .right {
-                                    width: 100%;
-                                    text-align: right;
-                                    display: flex;
-                                    justify-content: flex-end;
-                                    align-items: center;
-                                    ion-label {
-                                        padding: 2px 5px;
-                                        border: 2px solid #00a651;
-                                        color: #00a651;
-                                        border-radius: 5px;
-                                        display: flex;
-                                        align-items: center;
-                                        font-size: 0.75rem;
-                                        text-transform: capitalize;
-                                        letter-spacing: 0.5px;
-                                        max-width: 64px;
-                                        width: 100%;
-                                        position: relative;
-                                        span {
-                                            text-align: left;
-                                            width: 30px;
-                                        }
-                                        ion-icon {
-                                            font-weight: 600;
-                                            font-size: 0.9rem;
-                                            position: absolute;
-                                            right: 4px;
-                                        }
-                                    }
-                                    ion-label.added {
-                                        padding: 2px 5px;
-                                        color: #fff;
-                                        background: #00a651;
-                                        text-align: center;
-                                        span {
-                                            width: 100%;
-                                            text-align: center;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-                .accordion-box.in {
-                    height: 100% !important;
-                    overflow: unset;
-                    transition: all 0.3s;
-                    opacity: 1;
-                }
-                .accordion-box.out {
-                    height: 0px !important;
-                    overflow: hidden;
-                    transition: all 0.3s;
-                    opacity: 0;
-                }
-            }
-        }
     }
     ion-footer {
         background: #fff;
@@ -232,9 +102,214 @@ app-chef-profile {
             margin: 0px;
             --border-radius: 0px;
             --background: #00a651;
+            --background-active: #00a651;
+            --background-focus: #00a651;
+            --background-hover: #00a651;
+            --color:#ffffff;
+            --color-activated: #ffffff;
+            --color-hover: #ffffff;
             height: 45px;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             letter-spacing: 0px;
+
         }
     }
 }
+
+
+
+app-chef-profile {
+    ion-content {
+        ion-item-group.chef-profile-header {
+            ion-item {
+                position: relative;
+                ion-avatar {
+                    min-height: 75px;
+                    min-width: 75px;
+                    position: absolute;
+                    left: 0;
+                    top: 10px;
+                }
+                ion-label {
+                    padding-left: 90px;
+                    h4 {
+                        font-size: 1.1rem !important;
+                        font-weight: 600 !important;
+                        color: #2d2d2d;
+                    }
+                    h5 {
+                        font-size: 0.9rem !important;
+                        color: #6e6e6e;
+                        padding-top: 3px;
+                        padding-bottom: 7px;
+                    }
+                    span {
+                        font-size: 0.8rem !important;
+                        color: #6e6e6e !important;
+                    }                        
+                }
+            }
+        }
+        ion-grid.grid-feature-marks {
+            border-top: 1px dashed #bebebe;
+            border-bottom: 1px dashed #bebebe;
+            ion-row{
+                ion-col{
+                    ion-item-group{
+                        ion-item {
+                            --min-height: 20px;
+                            ion-label {
+                                text-align: center;
+                                margin: 0 0 0px;
+                                font-size: 0.8rem !important;
+                                color: #6e6e6e !important;
+                            }
+                            &:first-child {
+                                ion-label {
+                                    color: #2d2d2d !important;
+                                    font-weight: 600;
+                                    font-size: 0.9rem !important;
+                                    margin: 0 0 7px;
+                                }    
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        ion-list.a-content {
+            padding-bottom: 0;
+            > ion-item {
+                ion-label {
+                    h2 {
+                        color: #2d2d2d;
+                        font-size: 1rem;
+                        font-weight: 600;
+                    }
+                }
+                ion-icon {
+                    font-size: 1rem;
+                    color: #2d2d2d;
+                }
+            }
+            ion-list {
+                padding: 0px;
+                ion-item.itemCardView {
+                    margin-bottom:10px;
+                    ion-thumbnail{
+                        margin-right:10px;
+                    }
+                    ion-grid{
+                        padding:0px;
+                        ion-row{
+                            padding:0px;
+                            ion-col{
+                                padding:0px;
+                                h4{
+                                    font-size: 1rem;
+                                    color: #2d2d2d;
+                                    margin: 0px;
+                                }
+                            }
+                        }
+                        ion-row{
+                            ion-col{
+                                h5 {
+                                    font-size: 0.9rem;
+                                    color: #6e6e6e;
+                                    margin: 3px 0 0;
+                                }
+                            }
+                            ion-col{
+                                ion-row {
+                                    ion-col{
+                                        ion-rating{
+                                            display:flex;
+                                            width: unset;
+                                            float: left;
+                                            ion-button {
+                                                height: 14px;
+                                                margin: 0px;
+                                                line-height: 10px;
+                                            }
+                                        }
+                                        p.votes {
+                                            margin: 0px;
+                                            font-size: 0.75rem;
+                                            color: #6e6e6e;
+                                            padding-top: 2px;
+                                            margin-left: 2px;
+                                            float: left;
+                                        }
+                                    }
+                                }
+                            }
+                            ion-col.center-align{
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                max-width: 35%;
+                                ion-button.selection-button:not(.active) {
+                                    float: right;
+                                    color: #00a651;
+                                    --border-color: #00a651;
+                                    font-size: 0.7rem;
+                                    min-width: 70px;
+                                }
+                                ion-button.selection-button.active {
+                                    font-size: 0.7rem;
+                                    min-width: 70px;
+                                    float: right;
+                                    color: #fff;
+                                    --border-color: #00a651;
+                                    --background: #00a651;
+                                    --background-active: #00a651;
+                                    --background-focus: #00a651;
+                                    --background-hover: #00a651;
+                                    --color:#ffffff;
+                                    --color-activated: #ffffff;
+                                    --color-hover: #ffffff;
+                                }
+
+                                ion-text.qty-button {
+                                    float: right;
+                                    text-align: center;
+                                    border: 2px solid #00a651;
+                                    border-radius: 5px;
+                                    font-size: 0.9rem;
+                                    display: flex;
+                                    align-items: center;
+                                    min-width: 75px;
+                                    justify-content: center;
+                                    min-height: 22px;
+                                    > * {
+                                        height: 22px;
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                    }
+                                    ion-icon {
+                                        color: #484848;
+                                        min-width: 19px;
+                                        --color-hover:#00a651;
+                                        --color-focus:#00a651;
+                                        --color-active:#00a651;
+                                    }
+                                    span {
+                                        background: #00a651;
+                                        padding: 0 10px;
+                                        color: #fff;
+                                        text-align: center;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}
+
