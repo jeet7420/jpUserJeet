@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AlertController } from '@ionic/angular';
+import { AlertController , ModalController} from '@ionic/angular';
 import { Router } from '@angular/router';
-
+import { PopupIngredientsPage } from '../popup-ingredients/popup-ingredients.page';
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.page.html',
@@ -10,8 +10,11 @@ import { Router } from '@angular/router';
 export class CartPage implements OnInit {
 
   cart: any;
-  constructor(private alertController: AlertController,
-    private router: Router) {
+  constructor(
+    private alertController: AlertController,
+    private modalController : ModalController,
+    private router: Router
+  ) {
     this.cart = [0];
     console.log('length of this.cart', this.cart.length);
   }
@@ -47,4 +50,23 @@ export class CartPage implements OnInit {
     this.generalPopup();
   }
 
+  
+  async detailPopup() {
+    const modal = await this.modalController.create({
+      component: PopupIngredientsPage,
+      componentProps: {
+        "paramID": 123,
+        "paramTitle": "Test Title"
+      }
+    });
+ 
+    modal.onDidDismiss().then((dataReturned) => {
+      if (dataReturned !== null) { 
+        //this.dataReturned = dataReturned.data;
+        //alert('Modal Sent Data :'+ dataReturned);
+      }
+    });
+ 
+    return await modal.present();
+  }
 }

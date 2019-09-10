@@ -263,6 +263,39 @@ ion-header{
     background:url("assets/images/popup-img.svg") center center / cover no-repeat;
 }
 
+ion-tab-button span {
+    width: 20px;
+    height: 20px;
+}
+
+ion-tab-button[tab="home"]:not([aria-selected="true"]) span {
+    background:url("assets/images/home2.svg") center center / cover no-repeat;
+}
+ion-tab-button[tab="home"][aria-selected="true"] span {
+    background:url("assets/images/home1.svg") center center / cover no-repeat;
+}
+
+ion-tab-button[tab="cart"]:not([aria-selected="true"]) span {
+    background:url("assets/images/cart2.svg") center center / cover no-repeat;   
+}
+ion-tab-button[tab="cart"][aria-selected="true"] span {
+    background:url("assets/images/cart1.svg") center center / cover no-repeat;
+}
+
+ion-tab-button[tab="profile"]:not([aria-selected="true"]) span {
+    background:url("assets/images/profile1.svg") center center / cover no-repeat;   
+}
+ion-tab-button[tab="profile"][aria-selected="true"] span {
+    background:url("assets/images/profile2.svg") center center / cover no-repeat;
+}
+
+ion-tab-button[tab="more"]:not([aria-selected="true"]) span {
+    background:url("assets/images/more2.svg") center center / cover no-repeat;   
+}
+ion-tab-button[tab="more"][aria-selected="true"] span {
+    background:url("assets/images/more1.svg") center center / cover no-repeat;
+}
+
 ion-rating {
     ion-button{
         --background:transparent;

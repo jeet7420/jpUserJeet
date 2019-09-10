@@ -33,7 +33,7 @@
 @import "theme/common.scss";
 /* Pages */
 @import "app/splash/splash.page.scss";
-//@import "app/otp/otp.page.scss";
+@import "app/otp/otp.page.scss";
 @import "app/signup/signup.page.scss";
 @import "app/user-profile/user-profile.page.scss";
 @import "app/chef-profile/chef-profile.page.scss";
@@ -50,7 +50,7 @@
 @import "app/profile/profile.page.scss";
 @import "app/cart/cart.page.scss";
 @import "app/home/home.page.scss";
-
+ 
 @import "app/popups/popups.page.scss";
 
 /* Global SCSS*/

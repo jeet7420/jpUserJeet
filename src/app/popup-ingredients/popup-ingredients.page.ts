@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AlertController , ModalController} from '@ionic/angular';
 
 @Component({
   selector: 'app-popup-ingredients',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PopupIngredientsPage implements OnInit {
 
-  constructor() { }
+  constructor(
+    private modalController : ModalController
+  ) { }
 
   ngOnInit() {
+  }
+
+  closeModal(){
+    this.modalController.dismiss();
   }
 
 }

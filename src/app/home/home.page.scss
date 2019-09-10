@@ -111,17 +111,17 @@ app-home{
     ion-item {
         --padding-start: 0px;
         --inner-padding-end: 0px;
-        margin-bottom: 10px;
+        margin-bottom: 0px;
         margin-top: 10px;
         ion-thumbnail {
-            min-width: 100px;
-            min-height: 100px;
+            min-width: 75px;
+            min-height: 75px;
             position: absolute;
             left: 0;
             top: 8px;
         }
         ion-label{
-            padding-left: 110px;
+            padding-left: 85px;
             h5 {
                 font-size: 1.1rem;
             }
@@ -147,7 +147,7 @@ app-home{
                 margin-top: 20px;
                 border-top: 1px solid rgba(119, 119, 119, 0.31);
                 padding-top: 10px;
-                padding-bottom: 20px;
+                padding-bottom: 0px;
                 > * {
                     display: flex;
                     align-items: center;

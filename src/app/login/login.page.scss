@@ -28,21 +28,22 @@ app-login {
               align-items: center;
               border-bottom: 1px solid #fff;
               margin-right: 10px;
-              height: 33px;
+              height: 50px;
               img {
                 margin-right: 5px;
+                width: 32px;
               }
               span {
-                font-size: 1rem;
+                font-size: 1.5rem;
                 color: var(--ion-input-text-color);
               }
             }
             ion-input {
               border-bottom: 1px solid #fff;
-              height: 33px;
+              height: 50px;
               --padding-start: 5px !important;
               --padding-end: 5px;
-              font-size: 1rem;
+              font-size: 1.5rem;
               color: var(--ion-input-text-color);
             }
             ion-label.or-text {
@@ -68,12 +69,15 @@ app-login {
               display: flex;
               align-items: center;
               justify-content: center;
-              img {
-                width: 20px;
-              }
               ion-label {
-                text-align: center;
                 width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                img {
+                  width: 20px;
+                  margin-right: 15px;
+                }
               }
             }
           }
