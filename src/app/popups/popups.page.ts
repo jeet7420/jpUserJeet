@@ -53,6 +53,31 @@ export class PopupsPage implements OnInit {
     await alert.present();
   }
 
+  
+  async twoButtonPopup() {
+    const alert = await this.alertController.create({
+      cssClass: 'custom-alert-box phone-popup two-button-popup',
+      message: 'Want to call ?',
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          handler: () => {
+            
+          }
+        },
+        {
+          text: 'Call Us',
+          handler: () => {
+            console.log('Confirm Okay');
+          }
+        }
+      ]
+    });
+
+    await alert.present();
+  }
+
   async detailPopup() {
     const modal = await this.modalController.create({
       component: PopupIngredientsPage,

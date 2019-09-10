@@ -253,11 +253,27 @@ ion-header{
     }
 }
 
+.two-button-popup {
+    .alert-button-group {
+        .alert-button {
+            width: calc(50% - 20px) !important;
+            margin: 0 10px !important;
+            &:last-child {
+                background: #00a651;
+            }
+        }
+    }
+    
+}
+
 .custom-alert-box.confirmation-popup .alert-wrapper:before {
     background:url("assets/images/cost.svg") center center / cover no-repeat;
 }
 .custom-alert-box.booking-done-popup .alert-wrapper:before {
     background:url("assets/images/booking-done-icon.svg") center center / cover no-repeat;
+}
+.custom-alert-box.phone-popup .alert-wrapper:before {
+    background:url("assets/images/phone-popup.svg") center center / cover no-repeat;
 }
 .custom-alert-box.detail-popup .alert-wrapper:before {
     background:url("assets/images/popup-img.svg") center center / cover no-repeat;
