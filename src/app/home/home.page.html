@@ -10,7 +10,7 @@
     </ion-label>
   </ion-toolbar>
 </ion-header>
- 
+
 <ion-content>
 
   <ion-slides [options]="sliderOptions" class="promotion-slider">
@@ -42,42 +42,28 @@
     </div>
   </div>
   <ion-list class="p-list">
-<<<<<<< HEAD
-    <ion-item lines="none">
-      <ion-thumbnail slot="start">
-        <img src="../../assets/products/product-0.jpg">
-      </ion-thumbnail>
-      <ion-label class="detail" text-wrap>
-        <h5>Madhur Jaffrey</h5>
-        <p>Master Chef, Delhi </p>
-        <ion-text class="offer">
-          <img src="../../assets/images/food.svg" />
-          <span class="off">Chicken Butter masala, Kheer</span>
-        </ion-text>
-        <div class="bottom-detail flex-mode">
-=======
-    <ion-item lines="none" *ngFor = "let chef of availableChefs" (click) = "openChefDetails()">
+    <ion-item lines="none" *ngFor="let chef of availableChefs" (click)="openChefDetails()">
       <div class="box">
         <ion-thumbnail>
           <img src="../../assets/products/product-0.jpg">
         </ion-thumbnail>
-        <div class="detail">
+        <ion-label class="detail" text-wrap>
           <h5>{{chef?.chefFullName}}</h5>
           <p>{{chef?.comments}}</p>
-          <div class="offer">
+          <!-- <div class="offer">
             <img src="../../assets/images/food.svg" />
             <span class="off">Chicken Butter masala, Kheer</span>
-          </div>
+          </div> -->
           <div class="bottom-detail flex-mode">
->>>>>>> f9d5f8a8748b551eff630a984292867f10746b27
             <div class="ratting">
               <ion-icon name="star"></ion-icon>
               <span>{{chef?.averageRating}}</span>
             </div>
           </div>
-      </ion-label>
-      
-   </ion-item>
+        </ion-label>
+      </div>
+
+    </ion-item>
 
   </ion-list>
 </ion-content>

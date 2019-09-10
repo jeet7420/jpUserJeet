@@ -27,7 +27,7 @@ const routes: Routes = [
               import('../cart/cart.module').then(m => m.CartPageModule)
           }
         ]
-        , canActivate: [AuthGuard]
+        //, canActivate: [AuthGuard]
       },
       {
         path: 'more',
@@ -59,7 +59,7 @@ const routes: Routes = [
               import('../profile/profile.module').then(m => m.ProfilePageModule)
           }
         ]
-        , canActivate: [AuthGuard]
+        //, canActivate: [AuthGuard]
       },
       {
         path: 'chef-profile',
