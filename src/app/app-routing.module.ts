@@ -19,12 +19,11 @@ const routes: Routes = [
   { path: 'edit-user-profile', loadChildren: './edit-user-profile/edit-user-profile.module#EditUserProfilePageModule' },
   { path: 'profile', loadChildren: './profile/profile.module#ProfilePageModule' },
   { path: 'home', loadChildren: './home/home.module#HomePageModule' },
-  { path: 'login', loadChildren: './login/login.module#LoginPageModule' },  { path: 'popup-ingredients', loadChildren: './popup-ingredients/popup-ingredients.module#PopupIngredientsPageModule' },
-
-
-
+  { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
+  { path: 'popup-ingredients', loadChildren: './popup-ingredients/popup-ingredients.module#PopupIngredientsPageModule' },
 
 ];
+
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })

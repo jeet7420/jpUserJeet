@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AlertController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
@@ -8,8 +10,9 @@ import { Component, OnInit } from '@angular/core';
 export class CartPage implements OnInit {
 
   cart: any;
-  constructor() {
-    this.cart = [];
+  constructor(private alertController: AlertController,
+    private router: Router) {
+    this.cart = [0];
     console.log('length of this.cart', this.cart.length);
   }
 
@@ -20,6 +23,28 @@ export class CartPage implements OnInit {
 
   ngOnInit() {
 
+  }
+
+  async generalPopup() {
+    const alert = await this.alertController.create({
+      cssClass: 'custom-alert-box booking-done-popup',
+      message: 'Your booking has been confirmed',
+      buttons: [
+        {
+          text: 'Ok',
+          handler: () => {
+            console.log('Confirm Okay');
+            this.router.navigateByUrl('/tabs/profile/booking-history');
+          }
+        }
+      ]
+    });
+
+    await alert.present();
+  }
+
+  invokePaymentHandler() {
+    this.generalPopup();
   }
 
 }

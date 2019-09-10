@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 
 
@@ -56,7 +57,7 @@ export class ChefProfilePage implements OnInit {
     }
   ];
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
@@ -82,4 +83,9 @@ export class ChefProfilePage implements OnInit {
     }
    
   }
+  continueToCart() {
+
+    this.router.navigateByUrl('/tabs/cart');
+  }
+
 }

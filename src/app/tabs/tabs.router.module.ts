@@ -26,8 +26,8 @@ const routes: Routes = [
             loadChildren: () =>
               import('../cart/cart.module').then(m => m.CartPageModule)
           }
-        ],
-        canActivate: [AuthGuard]
+        ]
+        , canActivate: [AuthGuard]
       },
       {
         path: 'more',
@@ -58,8 +58,8 @@ const routes: Routes = [
             loadChildren: () =>
               import('../profile/profile.module').then(m => m.ProfilePageModule)
           }
-        ],
-        canActivate: [AuthGuard]
+        ]
+        , canActivate: [AuthGuard]
       },
       {
         path: 'chef-profile',
@@ -68,6 +68,26 @@ const routes: Routes = [
             path: '',
             loadChildren: () =>
               import('../chef-profile/chef-profile.module').then(m => m.ChefProfilePageModule)
+          }
+        ]
+      },
+      {
+        path: 'login',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../login/login.module').then(m => m.LoginPageModule)
+          }
+        ]
+      },
+      {
+        path: 'otp',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../otp/otp.module').then(m => m.OtpPageModule)
           }
         ]
       },

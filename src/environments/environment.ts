@@ -6,6 +6,10 @@ export const environment = {
   production: false
 };
 
+export const INGRESS_URL  ='http://103.120.179.22:8080/jp_user_ingress';
+
+export const DEV_FLAG = true;
+
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.

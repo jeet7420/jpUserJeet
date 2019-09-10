@@ -1,6 +1,7 @@
 import { NgModule , CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
@@ -17,10 +18,11 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { ZnodeAccordionDirective } from './directives/znode-accordion.directive'
 library.add(fas,far)// add all icons
 
-import { PopupIngredientsPage } from './popup-ingredients/popup-ingredients.page';
 
 // Import ionic-rating module
 import { IonicRatingModule } from 'ionic-rating';
+import { PopupIngredientsPage } from "./popup-ingredients/popup-ingredients.page";
+import { IonicStorageModule } from '@ionic/storage';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,15 @@ import { IonicRatingModule } from 'ionic-rating';
   entryComponents: [
     PopupIngredientsPage
   ],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule , FontAwesomeModule , IonicRatingModule ,  ],
+  imports: [
+    BrowserModule, 
+    IonicModule.forRoot(), 
+    AppRoutingModule , 
+    FontAwesomeModule,
+    IonicRatingModule,
+    HttpClientModule,
+    IonicStorageModule.forRoot({ name: '__jppdb' })  
+  ],
   providers: [
     StatusBar,
     SplashScreen,

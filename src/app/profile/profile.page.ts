@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IngressService } from '../services/ingress.service';
 
 @Component({
   selector: 'app-profile',
@@ -7,13 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfilePage implements OnInit {
 
-  constructor() { }
+  constructor(private ingressService: IngressService) { }
 
   ngOnInit() {
   }
 
   onLogoutClick() {
     console.log("Logout event");
+    this.ingressService.logout();
   }
 
 }
