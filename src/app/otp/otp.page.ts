@@ -17,10 +17,11 @@ export class OtpPage implements OnInit {
     , private route: ActivatedRoute) { }
 
   callerPage: string;
+  inputPhoneNumber: any;
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
       this.callerPage = params['callerPage'] || '/tabs/home';
-      console.log('query params otp: ', this.callerPage);
+      this.inputPhoneNumber = params['phoneNumber'];
     });
   }
   verifyOTP() {
@@ -29,7 +30,7 @@ export class OtpPage implements OnInit {
 
     var verifyUserPayload = {
       "loginMode": "P",
-      "phoneNum": "7337367761"
+      "phoneNum": this.inputPhoneNumber
     }
     if (devFlag) {
       this.ingressProvider.login(verifyUserPayload).subscribe((resp) => {
@@ -38,6 +39,14 @@ export class OtpPage implements OnInit {
         if (this.userData.recordStatus === 1) {
           this.storage.set('loggedInUser', this.userData.userId);
           this.router.navigateByUrl(this.callerPage);
+        }
+        else if (this.userData.recordStatus === 2) {
+          this.router.navigate(['/tabs/signup'], {
+            queryParams: {
+              phoneNumber: this.inputPhoneNumber,
+              callerPage: this.callerPage
+            }
+          });
         }
       });
     }

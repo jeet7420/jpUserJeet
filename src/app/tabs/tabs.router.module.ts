@@ -82,6 +82,16 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'signup',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../signup/signup.module').then(m => m.SignupPageModule)
+          }
+        ]
+      },
+      {
         path: 'otp',
         children: [
           {

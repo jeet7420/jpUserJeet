@@ -5,18 +5,18 @@
   </section>
 
   <section class="content-main">
-    <form>
+    <form [formGroup]="loginForm" >
       <ion-list>
         <ion-item lines="none">
           <div class="suffix">
             <img src="../../assets/images/flag.png">
             <span>+91</span>
           </div>
-          <ion-input type="number" placeholder="Enter Phone Number"></ion-input>
+          <ion-input formControlName="phoneNumber" type="number" placeholder="Enter Phone Number"></ion-input>
         </ion-item>
 
         <ion-item lines="none" class="mt-20">
-          <ion-button type="submit" (click)="continueClick()">continue</ion-button>
+          <ion-button type="submit"  [disabled]="!loginForm.valid" (click)="continueClick()">continue</ion-button>
         </ion-item>
 
 

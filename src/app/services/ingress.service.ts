@@ -11,10 +11,11 @@ export class IngressService {
   loggedInUserId: any;
 
   constructor(private httpClient: HttpClient
-    , private storage : Storage
-    , private router : Router) { }
+    , private storage: Storage
+    , private router: Router) { }
 
   loginUrl = INGRESS_URL + '/login';
+  registerUrl = INGRESS_URL + '/register';
 
 
   login(userDetails) {
@@ -29,10 +30,22 @@ export class IngressService {
     );
   }
 
+  register(userDetails) {
+    console.log('inside register');
+    var options = {
+      headers: new HttpHeaders()
+        .set('Content-Type', 'application/json')
+    };
+    return this.httpClient.post(this.registerUrl
+      , userDetails
+      , options
+    );
+  }
+
 
   logout(): Promise<boolean> {
     return this.storage.remove('loggedInUser').then(() => {
-      this.loggedInUserId=null;
+      this.loggedInUserId = null;
       console.log("logout");
       this.router.navigate(['/tabs/home']);
       return true;

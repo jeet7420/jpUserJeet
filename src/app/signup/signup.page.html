@@ -5,7 +5,7 @@
     </section>
   
     <section class="content-main">
-      <form>
+      <form [formGroup]="registerForm" >
         <ion-list>
           <ion-label class="heading-1">
               <p>Few Steps away towards best services</p>
@@ -13,19 +13,19 @@
           </ion-label>
 
           <ion-item lines="none">
-            <ion-input type="Fullname" placeholder="Fullname"></ion-input>
+            <ion-input formControlName="fullName" type="Fullname" placeholder="Fullname"></ion-input>
           </ion-item>
           <ion-item lines="none">
-            <ion-input type="Email" placeholder="Email"></ion-input>
+            <ion-input formControlName="email" type="Email" placeholder="Email"></ion-input>
           </ion-item>
           <ion-item lines="none">
-            <ion-input type="number" min="0" max="10" maxlength="10" placeholder="Phone Number"></ion-input>
+            <ion-input formControlName="phoneNumber" type="number" min="0" max="10" maxlength="10" placeholder="Phone Number"></ion-input>
           </ion-item>
           <ion-item lines="none">
-            <ion-button type="submit">sign up</ion-button>
+            <ion-button type="submit" (click) = "signUpClick()"  [disabled]="!registerForm.valid" >sign up</ion-button>
           </ion-item>
         </ion-list>
       </form>
     </section>
-    <ion-label class="stick-bottom sign-in">Already have an account? <span>SIGN IN</span></ion-label>
+    <ion-label class="stick-bottom sign-in" routerLink ='/tabs/login'>Already have an account? <span>SIGN IN</span></ion-label>
   </ion-content>
