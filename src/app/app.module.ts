@@ -23,6 +23,7 @@ library.add(fas,far)// add all icons
 import { IonicRatingModule } from 'ionic-rating';
 import { PopupIngredientsPage } from "./popup-ingredients/popup-ingredients.page";
 import { IonicStorageModule } from '@ionic/storage';
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { IonicStorageModule } from '@ionic/storage';
   providers: [
     StatusBar,
     SplashScreen,
+    InAppBrowser,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent],

@@ -1,35 +1,49 @@
  
   <ion-content class="ion-no-padding">
     <ion-list>
-        <ion-item lines="none">
+        <ion-item lines="none" (click)="twoButtonPopup()">
           <ion-label>
             <h2>Help Center</h2>
             <p>Trouble using the app? Contact Us!</p>
           </ion-label>
           <img slot="end" src="../../assets/images/help.svg"/>
         </ion-item>
-        <ion-item lines="none">
+        <!-- <ion-item lines="none">
           <ion-label>
             <h2>Download JP Partner App</h2>
             <p>Download our partner app for more info.</p>
           </ion-label>
           <img slot="end" src="../../assets/images/partnership.svg"/>
-        </ion-item>
-        <ion-item lines="none">
+        </ion-item> -->
+        <ion-item lines="none" (click) = "openSysBrowser('tnc')">
           <ion-label>
             <h2>About JP</h2>
             <p>Fresh, perfectly portioned ingredients + easy-to-follow recipes delivered straight to your door.</p>
           </ion-label>
           <img slot="end" src="../../assets/images/about.svg"/>
         </ion-item>
-        <ion-item lines="none">
+        <!-- <ion-item lines="none">
           <ion-label>
             <h2>Share JP</h2>
             <p>Quickly and easily share JP with friends and family</p>
           </ion-label>
           <img slot="end" src="../../assets/images/share.svg"/>
+        </ion-item> -->
+        <ion-item lines="none" (click) = "openSysBrowser('pp')">
+          <ion-label>
+            <h2>Privacy Policy</h2>
+            <p>Read Jeerapowder privacy policy</p>
+          </ion-label>
+          <img slot="end" src="../../assets/images/share.svg"/>
         </ion-item>
-        <ion-item lines="none">
+        <ion-item lines="none" (click) = "openSysBrowser('tnc')">
+          <ion-label>
+            <h2>Terms of use</h2>
+            <p>Read Jeerapowder terms of use</p>
+          </ion-label>
+          <img slot="end" src="../../assets/images/share.svg"/>
+        </ion-item>
+        <ion-item lines="none" (click) = "generalPopup()">
           <ion-label>
             <h2>Rate JP</h2>
             <p>Rate our App.</p>

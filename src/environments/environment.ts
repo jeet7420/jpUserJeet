@@ -6,9 +6,13 @@ export const environment = {
   production: false
 };
 
-export const INGRESS_URL  ='http://103.120.179.22:8080/jp_user_ingress';
+export const INGRESS_URL  ='http://103.120.179.22:8080/jp_ingress';
 
 export const DEV_FLAG = true;
+export const PRIVACY_POLICY_URL = 'http://www.jeerapowder.com/assets/PRIVACY%20POLICY-%20JeeraPowder%20V1.0.pdf'
+export const TERMS_OF_USE_URL = "http://www.jeerapowder.com/assets/TERMS%20OF%20USE%20JeerPowder%20V1.0.pdf";
+
+export const ABOUT_URL = 'http://www.jeerapowder.com/#about';
 
 /*
  * For easier debugging in development mode, you can import the following file
