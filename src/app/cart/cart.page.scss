@@ -118,27 +118,22 @@ app-cart {
             color: #6e6e6e;
           }
         }
-       
       }
-     
-        
-        ion-row.address-bar ion-item {
-        }
-        
-        ion-row.address-bar ion-col {
-            padding-left: 0px;
-            padding-right: 0px;
-        }
 
-      ion-grid{
+      ion-row.address-bar ion-col {
+        padding-left: 0px;
+        padding-right: 0px;
+      }
+
+      ion-grid {
         position: fixed;
         bottom: 0;
         left: 0;
         right: 0;
         padding-left: 0px;
         padding-right: 0px;
-        ion-row.address-bar{
-          ion-col{
+        ion-row.address-bar {
+          ion-col {
             padding-left: 0px;
             padding-right: 0px;
             ion-item {

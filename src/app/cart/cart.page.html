@@ -2,10 +2,10 @@
     <ion-toolbar>
       <ion-title>Cart</ion-title>
     </ion-toolbar>
-  </ion-header> --> 
+  </ion-header> -->
 
 <ion-content>
-  <div class="empty-cart" *ngIf="cart.length==0">
+  <div class="empty-cart" *ngIf="cart?.length==0">
     <div class="inner">
       <img src="../../assets/images/empty-cart-logo.png" />
       <p>Good food is always cooking.</p>
@@ -13,7 +13,7 @@
     </div>
   </div>
 
-  <div class="cart-view" *ngIf="cart.length > 0">
+  <div class="cart-view" *ngIf="cart?.length > 0">
     <ion-list class="header">
       <ion-item lines="none">
         <ion-avatar slot="start">
@@ -27,17 +27,18 @@
     </ion-list>
 
     <ion-list class="cart-list">
-      <ion-item detail detailIcon="ios-close" lines="none" *ngFor="let c of cart ; let i = index;">
+      <ion-item lines="none" *ngFor="let c of cart ; let i = index;">
         <ion-thumbnail slot="start">
           <img src="../../assets/products/product-0.jpg" />
         </ion-thumbnail>
         <ion-label>
-          <h2>Tartlets With Vegetable Salad Buffe Table</h2>
-          <p>
-            <span class="currency">₹</span>
-            <span class="price">50.00</span>
-          </p>
+          <h2>{{c?.dishName}}<br>
+          <!-- <span class="currency">₹</span> -->
+          <span class="price">₹{{c?.dishCostPerPerson}} Per Person</span></h2>
         </ion-label>
+        <!-- <span class="currency">₹</span> -->
+        <span slot = "end">₹{{c?.dishCostPerPerson * c?.noOfPeople}}</span>
+        <ion-icon name="close" slot = "end" (click) = "deletePopup(c)"></ion-icon>
       </ion-item>
     </ion-list>
 
@@ -54,7 +55,7 @@
         </ion-label>
         <ion-label lines="none" class="total-cost" slot="end">
           <span class="currency">₹</span>
-          <span class="price">250.00</span>
+          <span class="price">{{totalAmount}}</span>
         </ion-label>
       </ion-item>
       <ion-item>
@@ -63,7 +64,7 @@
         </ion-label>
         <ion-label lines="none" class="total-cost" slot="end">
           <span class="currency">₹</span>
-          <span class="price">300.00</span>
+          <span class="price">{{minimumOrderAmount}}</span>
         </ion-label>
       </ion-item>
       <ion-item>
@@ -72,10 +73,10 @@
         </ion-label>
         <ion-label lines="none" class="total-cost" slot="end">
           <span class="currency">₹</span>
-          <span class="price">300.00</span>
+          <span class="price">{{payableAmount}}</span>
         </ion-label>
       </ion-item>
-      
+
     </ion-list>
 
     <ion-grid class="footer-fixed ">
@@ -105,13 +106,13 @@
           <ion-item lines="none" (click)="invokePaymentHandler()">
             <ion-label>
               <h2>Place Order</h2>
-              <p>Your total is ₹250</p>
+              <p>Your total is ₹{{payableAmount}}</p>
             </ion-label>
             <ion-icon slot="end" name="arrow-forward"></ion-icon>
           </ion-item>
         </ion-col>
       </ion-row>
     </ion-grid>
-    
+
   </div>
 </ion-content>

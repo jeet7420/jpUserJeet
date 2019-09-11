@@ -30,7 +30,7 @@ export class LoginPage implements OnInit {
 
   continueClick() {
     console.log("login event", this.redirect);
-    this.router.navigate(["/tabs/otp"], {
+    this.router.navigate(["/otp"], {
       queryParams: {
         callerPage: this.redirect,
         phoneNumber: this.loginForm.get("phoneNumber").value

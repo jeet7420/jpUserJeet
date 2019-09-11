@@ -1,4 +1,8 @@
 app-otp {
+    ion-toolbar {
+        --background: transparent;
+        --ion-color-base: transparent !important;
+        }
     ion-content {
         section.logo {
             display: flex;

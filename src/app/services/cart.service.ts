@@ -9,6 +9,16 @@ export class CartService {
   cartDishes: Dish[] = [];
 
   constructor() { }
+  chefDetails: any ={};
+
+  setChefDetails(chefId, minimumOrderAmount) {
+    this.chefDetails.chefId = chefId;
+    this.chefDetails.minimumOrderAmount = minimumOrderAmount;
+  }
+
+  gerChefDetails() {
+    return this.chefDetails;
+  }
 
 
   addDishToCart(dish: Dish): void {
@@ -27,7 +37,7 @@ export class CartService {
       this.cartDishes.push(dish);
     }
 
-    console.log(this.cartDishes);
+    //console.log(this.cartDishes);
 
   }
 
@@ -35,13 +45,15 @@ export class CartService {
     this.cartDishes = this.cartDishes.filter(item => item.dishId !== dish.dishId);
   }
 
+  getCart() {
+    return this.cartDishes;
+  }
 
-  getCartQuantity(dishId: number): number {
+  getCartTotal() {
+    let sum = 0;
     for (var i = 0; i < this.cartDishes.length; i++) {
-      if (this.cartDishes[i].dishId === dishId) {
-        return this.cartDishes[i].noOfPeople;
-      }
+      sum += this.cartDishes[i].dishCostPerPerson * this.cartDishes[i].noOfPeople;
     }
-    return 0;
+    return sum;
   }
 }

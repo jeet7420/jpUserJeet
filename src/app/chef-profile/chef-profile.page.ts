@@ -19,7 +19,8 @@ export class ChefProfilePage implements OnInit {
         {
           "dishId": 1,
           "img": "../../assets/products/product-0.jpg",
-          "title": "Starter A",
+          "dishName": "Starter A",
+          "dishCostPerPerson": 50,
           "course": "In Starters",
           "rating": 4,
           "selected": false,
@@ -28,7 +29,8 @@ export class ChefProfilePage implements OnInit {
         {
           "dishId": 2,
           "img": "../../assets/products/product-0.jpg",
-          "title": "Starter B",
+          "dishName": "Starter B",
+          "dishCostPerPerson": 55,
           "course": "In Starters",
           "rating": 4,
           "selected": false,
@@ -43,7 +45,8 @@ export class ChefProfilePage implements OnInit {
         {
           "dishId": 3,
           "img": "../../assets/products/product-0.jpg",
-          "title": "Desert A",
+          "dishName": "Main Course A",
+          "dishCostPerPerson": 40,
           "course": "In Starters",
           "rating": 4,
           "selected": false,
@@ -52,8 +55,9 @@ export class ChefProfilePage implements OnInit {
         {
           "dishId": 4,
           "img": "../../assets/products/product-0.jpg",
-          "title": "Desert B",
-          "course": "In Starters",
+          "dishName": "Main Course B",
+          "dishCostPerPerson": 60,
+          "course": "In Desserts",
           "rating": 4,
           "selected": false,
           "noOfPeople": 0
@@ -67,8 +71,9 @@ export class ChefProfilePage implements OnInit {
         {
           "dishId": 5,
           "img": "../../assets/products/product-0.jpg",
-          "title": "Desert A",
-          "course": "In Starters",
+          "dishName": "Desert A",
+          "dishCostPerPerson": 65,
+          "course": "In Desserts",
           "rating": 4,
           "selected": false,
           "noOfPeople": 0
@@ -76,8 +81,9 @@ export class ChefProfilePage implements OnInit {
         {
           "dishId": 6,
           "img": "../../assets/products/product-0.jpg",
-          "title": "Desert B",
-          "course": "In Starters",
+          "dishName": "Desert B",
+          "dishCostPerPerson": 45,
+          "course": "In Desserts",
           "rating": 4,
           "selected": false,
           "noOfPeople": 0
@@ -91,8 +97,9 @@ export class ChefProfilePage implements OnInit {
         {
           "dishId": 7,
           "img": "../../assets/products/product-0.jpg",
-          "title": "Desert A",
-          "course": "In Starters",
+          "dishName": "Accompaniment A",
+          "dishCostPerPerson": 100,
+          "course": "In Accompaniments",
           "rating": 4,
           "selected": false,
           "noOfPeople": 0
@@ -100,8 +107,9 @@ export class ChefProfilePage implements OnInit {
         {
           "dishId": 8,
           "img": "../../assets/products/product-0.jpg",
-          "title": "Desert B",
-          "course": "In Starters",
+          "dishName": "Accompaniment B",
+          "dishCostPerPerson": 30,
+          "course": "In Accompaniments",
           "rating": 4,
           "selected": false,
           "noOfPeople": 0
@@ -115,6 +123,11 @@ export class ChefProfilePage implements OnInit {
 
   ngOnInit() {
   }
+
+  ionViewDidEnter(){
+    this.cartService.setChefDetails(1,200);
+  }
+ 
 
   public captureName(event: any): void {
     console.log(`Captured name by event value: ${event}`);

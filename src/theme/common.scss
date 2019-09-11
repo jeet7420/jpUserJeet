@@ -272,6 +272,9 @@ ion-header{
 .custom-alert-box.booking-done-popup .alert-wrapper:before {
     background:url("assets/images/booking-done-icon.svg") center center / cover no-repeat;
 }
+.custom-alert-box.delete-checkpoint-popup .alert-wrapper:before {
+    background:url("assets/images/warning.svg") center center / cover no-repeat;
+}
 .custom-alert-box.phone-popup .alert-wrapper:before {
     background:url("assets/images/phone-popup.svg") center center / cover no-repeat;
 }
@@ -299,10 +302,10 @@ ion-tab-button[tab="cart"][aria-selected="true"] span {
 }
 
 ion-tab-button[tab="profile"]:not([aria-selected="true"]) span {
-    background:url("assets/images/profile1.svg") center center / cover no-repeat;   
+    background:url("assets/images/profile_new1.svg") center center / cover no-repeat;   
 }
 ion-tab-button[tab="profile"][aria-selected="true"] span {
-    background:url("assets/images/profile2.svg") center center / cover no-repeat;
+    background:url("assets/images/profile_new2.svg") center center / cover no-repeat;
 }
 
 ion-tab-button[tab="more"]:not([aria-selected="true"]) span {

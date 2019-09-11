@@ -41,7 +41,7 @@ export class OtpPage implements OnInit {
           this.router.navigateByUrl(this.callerPage);
         }
         else if (this.userData.recordStatus === 2) {
-          this.router.navigate(['/tabs/signup'], {
+          this.router.navigate(['/signup'], {
             queryParams: {
               phoneNumber: this.inputPhoneNumber,
               callerPage: this.callerPage
