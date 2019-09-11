@@ -12,32 +12,31 @@ export class CartService {
 
 
   addDishToCart(dish: Dish): void {
+    //console.log("in cart service",dish);
 
     let found: boolean = false;
     for (var i = 0; i < this.cartDishes.length; i++) {
       if (this.cartDishes[i].dishId === dish.dishId) {
-        this.cartDishes[i].noOfPeople += 2;
+        this.cartDishes[i].noOfPeople = dish.noOfPeople;
         found = true;
         break;
       }
     }
     if (!found) {
-      dish.noOfPeople = 2;
+      dish.noOfPeople = 1;
       this.cartDishes.push(dish);
     }
+
+    console.log(this.cartDishes);
 
   }
 
   removeDishFromCart(dish: Dish): void {
-    for (var i = 0; i < this.cartDishes.length; i++) {
-      if (this.cartDishes[i].dishId === dish.dishId) {
-        this.cartDishes[i].noOfPeople -= 2;
-        break;
-      }
-    }
+    this.cartDishes = this.cartDishes.filter(item => item.dishId !== dish.dishId);
   }
 
-  getCartQuantity(dishId: number): number{
+
+  getCartQuantity(dishId: number): number {
     for (var i = 0; i < this.cartDishes.length; i++) {
       if (this.cartDishes[i].dishId === dishId) {
         return this.cartDishes[i].noOfPeople;
