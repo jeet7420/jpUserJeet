@@ -5,13 +5,12 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { BookingHistoryPage } from './booking-history.page';
-import { RatingModule } from 'ng-starrating';
+import { BookingDetailsPage } from './booking-details.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: BookingHistoryPage
+    component: BookingDetailsPage
   }
 ];
 
@@ -20,9 +19,8 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    RatingModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [BookingHistoryPage]
+  declarations: [BookingDetailsPage]
 })
-export class BookingHistoryPageModule {}
+export class BookingDetailsPageModule {}

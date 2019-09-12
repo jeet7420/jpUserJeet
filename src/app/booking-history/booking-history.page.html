@@ -8,60 +8,52 @@
   
   <ion-content>
    <ion-list>
-     <ion-label>Upcoming Booking</ion-label>
-     <ion-card>
+     <ion-label>Upcoming Bookings</ion-label>
+     <ion-card *ngFor = "let booking of upcomingBookings" (click) = "openBookingDetails()">
        <ion-card-content>
-         <ion-item lines="none">
+         <ion-item lines="none" >
            <ion-avatar>
              <img src="../../assets/images/chef-pp.jpg"/>
            </ion-avatar>
            <ion-label text-wrap>
-             <h2>Jacob Thomas</h2>
-             <p>B-21,Konark Sun Temple,Orrisa</p>
+             <h2>{{booking?.chefName}}</h2>
+             <p>Total: ₹{{booking?.totalAmount}}</p>
              <label>
-                  <span>Master Chef</span>
+                <span>{{booking?.comments}}</span>
              </label>
            </ion-label>
            
          </ion-item>
          <div class="ion-card-footer">
-            <span><b>Date:</b> 14-01-2019</span>
-            <span><b>Time:</b> 10:45 AM</span>
+            <span><b>Date:</b> {{booking?.bookingTime}}</span>
+            <span><b>Time:</b> {{booking?.bookingTime}}</span>
          </div>
        </ion-card-content>
      </ion-card>
    </ion-list>
    <ion-list>
-      <ion-label>Previous Booking</ion-label>
-      <ion-card>
+      <ion-label>Previous Bookings</ion-label>
+      <ion-card *ngFor = "let booking of completedBookings" (click) = "openBookingDetails()">
         <ion-card-content>
-          <ion-item lines="none">
+          <ion-item lines="none" >
             <ion-avatar>
               <img src="../../assets/images/chef-pp.jpg"/>
             </ion-avatar>
             <ion-label text-wrap>
-              <h2>Jacob Thomas</h2>
-              <p>B-21,Konark Sun Temple,Orrisa</p>
-              <label>
-                  <span>Master Chef</span>
-                 <div class="stars">
-                    <ion-icon name="star" class="fill"></ion-icon>
-                    <ion-icon name="star" class="fill"></ion-icon>
-                    <ion-icon name="star" class="fill"></ion-icon>
-                    <ion-icon name="star" class="fill"></ion-icon>
-                    <ion-icon name="star" class=""></ion-icon>
-                  </div>
-             </label>
+              <h2>{{booking?.chefName}}</h2>
+              <p>Total: ₹{{booking?.totalAmount}}</p>             
+
+             <star-rating [value]="booking?.rating" checkedcolor="red" uncheckedcolor="black" size="15px"    readonly="true" ></star-rating>
             </ion-label>
           </ion-item>
           <div class="ion-card-footer">
-             <span><b>Date:</b> 14-01-2019</span>
-             <span><b>Time:</b> 10:45 AM</span>
+             <span><b>Date:</b>  {{booking?.bookingTime}}</span>
+             <span><b>Time:</b>  {{booking?.bookingTime}}</span>
           </div>
         </ion-card-content>
       </ion-card>
       
-      <ion-card>
+      <!-- <ion-card>
         <ion-card-content>
           <ion-item lines="none">
             <ion-avatar>
@@ -143,7 +135,7 @@
               <span><b>Time:</b> 10:45 AM</span>
           </div>
         </ion-card-content>
-      </ion-card>
+      </ion-card> -->
       
     </ion-list>
   </ion-content>

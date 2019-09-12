@@ -44,6 +44,7 @@
     "font-awesome": "^4.7.0",
     "ionic-rating": "^2.0.0",
     "ionic4-rating": "^1.0.9",
+    "ng-starrating": "^1.0.7",
     "rxjs": "~6.5.1",
     "tslib": "^1.9.0",
     "zone.js": "~0.9.1"

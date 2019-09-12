@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button color="black"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+  <div class='sub-headers-booking-details'>Order Summary</div>
+  <div class="cart-view">
+    <ion-list class="header">
+      <ion-item lines="none">
+        <ion-avatar slot="start">
+          <img src="../../assets/images/chef-pp.jpg" />
+        </ion-avatar>
+        <ion-label>
+          <h2>Jacob Thomas</h2>
+          <p>B-21, Konark Sun Tample, Orrisa</p>
+          <h2>{{bookingDetails?.bookingStatus}}</h2>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+    <div class='sub-headers-booking-details'>Your Order</div>
+    <ion-list class="cart-list">
+      <ion-item lines="none" *ngFor="let d of bookingDetails.dishes ; let i = index;">
+        <ion-thumbnail slot="start">
+          <img src="../../assets/products/product-0.jpg" />
+        </ion-thumbnail>
+
+        <ion-label>
+          <h2>{{d?.dishName}}<br>
+            <span class="price">For: {{d?.noOfPeople}} People</span></h2>
+        </ion-label>
+        <span slot="end">₹{{d?.dishTotalCost}}</span>
+      </ion-item>
+    </ion-list>
+
+
+
+    <ion-list class="cart-sub-detail">
+
+      <ion-item>
+        <ion-label>
+          <h2>Paid Amount</h2>
+        </ion-label>
+        <ion-label lines="none" class="total-cost" slot="end">
+          <span class="currency">₹</span>
+          <span class="price">{{bookingDetails?.totalAmountPaid}}</span>
+        </ion-label>
+      </ion-item>
+      <div class='sub-headers-booking-details'>Order Details</div>
+      <ion-list>
+        <ion-item>
+          <ion-label>
+            <p>Order Number:{{bookingDetails?.bookingId}}</p>
+            <p>Payment Mode:{{bookingDetails?.paymentMode}}</p>
+            <p>Payment Time:{{bookingDetails?.paymentTime}}</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-list>
+  </div>
+</ion-content>

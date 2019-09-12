@@ -20,7 +20,8 @@ const routes: Routes = [
   { path: 'profile', loadChildren: './profile/profile.module#ProfilePageModule' },
   { path: 'home', loadChildren: './home/home.module#HomePageModule' },
   { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
-  { path: 'popup-ingredients', loadChildren: './popup-ingredients/popup-ingredients.module#PopupIngredientsPageModule' },
+  { path: 'popup-ingredients', loadChildren: './popup-ingredients/popup-ingredients.module#PopupIngredientsPageModule' },  { path: 'booking-details', loadChildren: './booking-details/booking-details.module#BookingDetailsPageModule' },
+
 
 ];
 
