@@ -14,6 +14,10 @@ export const TERMS_OF_USE_URL = "http://www.jeerapowder.com/assets/TERMS%20OF%20
 
 export const ABOUT_URL = 'http://www.jeerapowder.com/#about';
 
+export const BOOKING_URL = 'http://103.120.179.22:3010/booking/';
+
+export const RAZORPAY_KEY = 'rzp_test_jSF2hE7el1Vm8d';
+
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.

@@ -3,6 +3,8 @@ import { AlertController, ModalController } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { PopupIngredientsPage } from '../popup-ingredients/popup-ingredients.page';
 import { CartService } from '../services/cart.service';
+import { PaymentHandlerService } from '../services/payment-handler.service';
+
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.page.html',
@@ -19,10 +21,12 @@ export class CartPage implements OnInit {
     private modalController: ModalController,
     private router: Router
     , private cartService: CartService
+    , private paymentHandler: PaymentHandlerService
   ) {
     // this.cart = [0];
     // console.log('length of this.cart', this.cart.length);
   }
+
 
 
   paymentModeChange() {
@@ -74,7 +78,17 @@ export class CartPage implements OnInit {
   }
 
   invokePaymentHandler() {
-    this.generalPopup("Your Booking has been confirmed.");
+
+    let paymentObject = {
+      amount: 1000,
+      customerName: 'Rahul',
+      customerEmail: 'Rahul@gmail.com',
+      customerPhone: '7337367762'
+    };
+    this.paymentHandler.payWithRazor(paymentObject);
+
+    
+
   }
 
 
