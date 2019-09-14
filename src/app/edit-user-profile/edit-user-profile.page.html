@@ -11,39 +11,44 @@
     <div class="profile-pic">
       <div class="cir outer-cir">
         <div class="cir inner-cir">
-          <div class="pic" style="background: url(assets//images/pp.jpg) center center / cover;">
-            <div class="camera"
-              style="background: url(assets//images/photo-camera.svg) center center / 75% 60% no-repeat ;"></div>
+          <div class="pic" style="background: url(assets//images/user-pp.svg) center center / cover;">
+            <!-- <div class="camera"
+              style="background: url(assets//images/user-pp.svg) center center / 75% 60% no-repeat ;"></div> -->
           </div>
         </div>
       </div>
     </div>
   </section>
 
+
   <section class="form-container">
-    <ion-list>
-      <ion-label class="heading-1">Jacob Thomas</ion-label>
-      <ion-item lines="none">
+    <form [formGroup]="editProfileForm">
+      <ion-list>
+        <ion-label class="heading-1">{{userDetails?.userFullName}}</ion-label>
+
+
+        <!-- <ion-item lines="none">
         <ion-label>full name</ion-label>
         <div class="input-enc">
           <ion-input type="text"></ion-input>
         </div>
-      </ion-item>
-      <ion-item lines="none">
-        <ion-label>email</ion-label>
-        <div class="input-enc">
-          <ion-input type="text"></ion-input>
-        </div>
-      </ion-item>
-      <ion-item lines="none">
-        <ion-label>phone no.</ion-label>
-        <div class="input-enc high-grad">
-          <ion-input type="text"></ion-input>
-        </div>
-      </ion-item>
-      <ion-item lines="none" class="button">
-        <ion-button>Save</ion-button>
-      </ion-item>
-    </ion-list>
+      </ion-item> -->
+        <ion-item lines="none">
+          <ion-label>email</ion-label>
+          <div class="input-enc">
+            <ion-input type="text" formControlName="email"></ion-input>
+          </div>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-label>phone no.</ion-label>
+          <div class="input-enc ">
+            <ion-input type="text" formControlName="phoneNum"></ion-input>
+          </div>
+        </ion-item>
+        <ion-item lines="none" class="button">
+          <ion-button (click)="updateUserProfile()">Save</ion-button>
+        </ion-item>
+      </ion-list>
+    </form>
   </section>
 </ion-content>

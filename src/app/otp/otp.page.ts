@@ -38,6 +38,11 @@ export class OtpPage implements OnInit {
         this.userData = resp;
         if (this.userData.recordStatus === 1) {
           this.storage.set('loggedInUser', this.userData.userId);
+          this.ingressProvider.getUserProfile(this.userData.userId).subscribe((resp) => {
+            let allData = resp;
+            console.log('all data', allData);
+            this.storage.set('allUserData', allData);
+          });
           this.router.navigateByUrl(this.callerPage);
         }
         else if (this.userData.recordStatus === 2) {

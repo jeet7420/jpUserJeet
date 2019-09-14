@@ -16,6 +16,8 @@ export class IngressService {
 
   loginUrl = INGRESS_URL + '/login';
   registerUrl = INGRESS_URL + '/register';
+  getUserProfileUrl = INGRESS_URL + '/getUser/';
+  editUserProfileUrl = INGRESS_URL + '/update/';
 
 
   login(userDetails) {
@@ -28,6 +30,10 @@ export class IngressService {
       , userDetails
       , options
     );
+  }
+
+  getUserProfile(userId) {
+    return this.httpClient.get(this.getUserProfileUrl + userId);
   }
 
   register(userDetails) {
@@ -52,6 +58,10 @@ export class IngressService {
     });
   }
 
+
+  updateUserProfile(userDetails) {
+    return this.httpClient.put(this.editUserProfileUrl + userDetails.userId, userDetails);
+  }
   async getToken() {
     if (!this.loggedInUserId) {
       console.log("storage token");
