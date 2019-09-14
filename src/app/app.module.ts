@@ -1,7 +1,8 @@
-import { NgModule , CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpConfigInterceptor } from './services/httpConfig.interceptor';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
@@ -16,7 +17,7 @@ import { fas } from '@fortawesome/free-solid-svg-icons'
 import { far } from '@fortawesome/free-regular-svg-icons'
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { ZnodeAccordionDirective } from './directives/znode-accordion.directive'
-library.add(fas,far)// add all icons
+library.add(fas, far)// add all icons
 
 
 // Import ionic-rating module
@@ -27,7 +28,7 @@ import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 @NgModule({
   declarations: [
-    AppComponent, 
+    AppComponent,
     ZnodeAccordionDirective,
     PopupIngredientsPage
   ],
@@ -35,21 +36,26 @@ import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
     PopupIngredientsPage
   ],
   imports: [
-    BrowserModule, 
-    IonicModule.forRoot(), 
-    AppRoutingModule , 
+    BrowserModule,
+    IonicModule.forRoot(),
+    AppRoutingModule,
     FontAwesomeModule,
     IonicRatingModule,
     HttpClientModule,
-    IonicStorageModule.forRoot({ name: '__jppdb' })  
+    IonicStorageModule.forRoot({ name: '__jppdb' })
   ],
   providers: [
     StatusBar,
     SplashScreen,
     InAppBrowser,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpConfigInterceptor,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class AppModule {}
+export class AppModule { }

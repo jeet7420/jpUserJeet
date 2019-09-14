@@ -19,6 +19,8 @@ export const BOOKING_URL = 'http://103.120.179.22:3010/booking/';
 export const RAZORPAY_KEY = 'rzp_test_jSF2hE7el1Vm8d';
 export const IMAGE_REPO = 'http://103.120.179.22:8080/ufs/'
 
+export const TAX_PERCENT = 18;
+
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
