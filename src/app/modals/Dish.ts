@@ -9,6 +9,6 @@ export class Dish{
     dishType ?:string;
     dishCategory ?: string;
     noOfPeople ?:number;
-    dishCostPerPerson ?:number;
+    dishCost ?:number;
 
 }

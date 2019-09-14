@@ -11,12 +11,13 @@ export const INGRESS_URL  ='http://103.120.179.22:8080/jp_ingress';
 export const DEV_FLAG = true;
 export const PRIVACY_POLICY_URL = 'http://www.jeerapowder.com/assets/PRIVACY%20POLICY-%20JeeraPowder%20V1.0.pdf'
 export const TERMS_OF_USE_URL = "http://www.jeerapowder.com/assets/TERMS%20OF%20USE%20JeerPowder%20V1.0.pdf";
-
+export const SELECTION_URL = 'http://103.120.179.22:8080/jp_smo';
 export const ABOUT_URL = 'http://www.jeerapowder.com/#about';
 
 export const BOOKING_URL = 'http://103.120.179.22:3010/booking/';
 
 export const RAZORPAY_KEY = 'rzp_test_jSF2hE7el1Vm8d';
+export const IMAGE_REPO = 'http://103.120.179.22:8080/ufs/'
 
 /*
  * For easier debugging in development mode, you can import the following file

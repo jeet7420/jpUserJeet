@@ -9,14 +9,17 @@
 <ion-content>
   <ion-item-group class="chef-profile-header" lines="none">
     <ion-item lines="none">
-      <ion-avatar>
-        <img src="../../assets/images/pp.jpg" />
+      <ion-avatar *ngIf = "dataLoadComplete">
+        <img src= {{chefImageUrl}}{{chefDetails?.imageUrl}} />
       </ion-avatar>
       <ion-label text-wrap>
-        <h4>Jacob Thomas</h4>
-        <h5>Master Chef, Orrisa</h5>
-        <p>Karunakar has been a cook since the last 7 years having experience in various cuisines</p>
-        <span><b>Can Speak:</b> English, Hindi</span>
+        <h4>{{chefDetails?.chefFullName}}</h4>
+        <h5>{{chefDetails?.comments}}<br>
+          Excellent in <b>{{chefDetails?.specialization}}</b> </h5>
+        <!-- <p>Karunakar has been a cook since the last 7 years having experience in various cuisines</p> -->
+        <span><b>Can Speak: </b><span class="off"
+            *ngFor="let language of chefDetails?.languageList let i= index">{{language}}
+            <span *ngIf=" i < chefDetails?.languageList.length-1">, </span></span> </span>
       </ion-label>
     </ion-item>
   </ion-item-group>
@@ -26,11 +29,11 @@
         <ion-item-group lines="none">
           <ion-item text-wrap lines="none">
             <ion-label>
-              <ion-icon name="star"></ion-icon> 4.0
+              <ion-icon name="star"></ion-icon> {{chefDetails?.averageRating}}
             </ion-label>
           </ion-item>
           <ion-item text-wrap lines="none">
-            <ion-label>1000+ Ratings</ion-label>
+            <ion-label>{{chefDetails?.ratingsCount}} Ratings</ion-label>
           </ion-item>
         </ion-item-group>
       </ion-col>
@@ -38,21 +41,21 @@
         <ion-item-group lines="none">
           <ion-item text-wrap lines="none">
             <ion-label>
-              <ion-icon name="pin"></ion-icon> 2.0 km
+              <ion-icon name="pin"></ion-icon> Distance
             </ion-label>
           </ion-item>
           <ion-item text-wrap lines="none">
-            <ion-label>1000+ Ratings</ion-label>
+            <ion-label>{{chefDetails?.distance}} KM</ion-label>
           </ion-item>
         </ion-item-group>
       </ion-col>
       <ion-col>
         <ion-item-group lines="none">
           <ion-item text-wrap lines="none">
-            <ion-label>₹ 250</ion-label>
+            <ion-label>Minimum amount</ion-label>
           </ion-item>
           <ion-item text-wrap lines="none">
-            <ion-label>For Two</ion-label>
+            <ion-label>₹{{chefDetails?.bookingCost}}</ion-label>
           </ion-item>
         </ion-item-group>
       </ion-col>
@@ -61,33 +64,33 @@
 
   <ion-grid class="accordions">
     <ion-list *ngFor="let item of accordionList ; let i = index;" class="a-content">
-      <ion-item *ngIf="item.children.length>0" class="item" lines="none" (click)="toggleAccordion(i)">
+      <ion-item *ngIf="item.children?.length>0" class="item" lines="none" (click)="toggleAccordion(i)">
         <ion-label text-wrap>
           <h2>{{item.name}}</h2>
         </ion-label>
         <ion-icon name="ios-arrow-up" *ngIf="!item.open" slot="end"></ion-icon>
         <ion-icon name="ios-arrow-down" *ngIf="item.open" slot="end"></ion-icon>
       </ion-item>
-      <ion-list *ngIf="item.children.length>0 && item.open">
+      <ion-list *ngIf="item.children?.length>0 && item.open">
         <ion-item class="itemCardView" *ngFor="let child of item.children ; let k = index;" lines="none">
           <ion-thumbnail slot="start">
-            <img src="{{child.img}}" />
+            <img src="{{dishImageUrl}}{{child?.dishImage}}" />
           </ion-thumbnail>
           <ion-grid>
             <ion-row>
               <ion-col>
-                <h4>{{child.title}}</h4>
+                <h4>{{child.dishName}}</h4>
               </ion-col>
             </ion-row>
             <ion-row>
               <ion-col col-8>
-                <h5>{{child.course}}</h5>
-                <ion-row>
+                <h5>{{child.cuisineName}}</h5>
+                <!-- <ion-row>
                   <ion-col>
                     <ion-rating [rate]="4" readonly="false" size="default"></ion-rating>
                     <p class="votes">33 Votes</p>
                   </ion-col>
-                </ion-row>
+                </ion-row> -->
               </ion-col>
               <ion-col col-4 class="center-align">
                 <ion-button class="selection-button" fill="outline" *ngIf="!child.selected" (click)="addItem(i,k)">Add
@@ -109,7 +112,7 @@
 </ion-content>
 
 <ion-footer>
-  
-  <ion-button class="full-width-button" routerLink = '/tabs/cart'>
-  continue to cart</ion-button>
+
+  <ion-button class="full-width-button" (click)="navigateToCart()">
+    continue to cart</ion-button>
 </ion-footer>

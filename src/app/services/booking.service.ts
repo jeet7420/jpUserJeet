@@ -8,6 +8,7 @@ import { BOOKING_URL } from 'src/environments/environment';
 export class BookingService {
 
   getAllBookingsUrl = BOOKING_URL + '/getAllBookings'
+  createBookingUrl = BOOKING_URL + '/book';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -26,4 +27,37 @@ export class BookingService {
     );
 
   }
+
+  createBooking(bookingdetails, dishes) {
+    let bookingPayload = {
+      "userId": bookingdetails.userId,
+      "chefId": bookingdetails.chefId,
+      "startTime": bookingdetails.startTime,
+      "longitude": bookingdetails.longitude,
+      "latitude": bookingdetails.latitude,
+      "comments": "NA",
+      "bookingAddress": bookingdetails.bookingAddress,
+      "bookingExtraDetails": dishes,
+      "bookingCostDetails": {
+        "totalBookingCost": bookingdetails.totalBookingCost,
+        //"discount": bookingdetails.discount,
+        //"discountRefKey": bookingdetails.discountRefKey,
+        "taxes": bookingdetails.taxes,
+        //"otherCharges": 0,
+        //"otherChargesDesc": "NA",
+        "totalAmountPaid": bookingdetails.totalAmountPaid
+      }
+    }
+
+    var options = {
+      headers: new HttpHeaders()
+        .set('Content-Type', 'application/json')
+    };
+
+    return this.httpClient.post(this.createBookingUrl
+      , bookingPayload
+      , options
+    );
+  }
+
 }

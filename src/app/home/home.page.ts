@@ -3,6 +3,8 @@ import { ModalController, AlertController } from '@ionic/angular';
 import { PopupsPage } from '../popups/popups.page';
 import { Chef } from '../modals/Chef';
 import { Router } from '@angular/router';
+import { SelectionService } from '../services/selection.service';
+import { IMAGE_REPO } from 'src/environments/environment';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +13,11 @@ import { Router } from '@angular/router';
 })
 export class HomePage implements OnInit {
   slider: any;
-  availableChefs: Chef[];
+  availableChefs: any;
+  allChefsArray: any = [];
+  dataLoadComplete = false;
+
+  chefImageUrl = IMAGE_REPO+'chef/';
   //Configuration for each Slider
   sliderOptions = {
     initialSlide: 0,
@@ -32,7 +38,8 @@ export class HomePage implements OnInit {
 
   constructor(public modalController: ModalController,
     public alertController: AlertController,
-    private router: Router) {
+    private router: Router
+    , private selectionService: SelectionService) {
     this.slider = {
       isBeginningSlide: true,
       isEndSlide: false,
@@ -82,6 +89,7 @@ export class HomePage implements OnInit {
     }
 
     this.getAvailableChefs();
+    
 
   }
 
@@ -133,32 +141,46 @@ export class HomePage implements OnInit {
   }
 
 
-  getAvailableChefs() {
-    this.availableChefs = [{
-      chefFullName: "Jacob Thomas",
-      comments: "Mater Chef, Delhi",
-      averageRating: 4.3,
-      bestPrepList: ["Chicken Butter masala", "kheer"]
-
-    },
-    {
-      chefFullName: "Milind Kumar",
-      comments: "Ravishing Desserts",
-      averageRating: 4.1,
-      bestPrepList: ["Double ka Meetha", "kheer"]
-
-    },
-    {
-      chefFullName: "Altaf Azhar",
-      comments: "Non veg Paradise",
-      averageRating: 4.1,
-      bestPrepList: ["Mutton keema", "Chicken Rezala"]
-
-    }];
+  convertJSONToArray(allChefs) {
+    for (var key in allChefs) {
+      if (allChefs.hasOwnProperty(key)) {
+        this.allChefsArray.push(allChefs[key]);
+      }
+    }
+    console.log(this.allChefsArray);
+    
   }
 
-  openChefDetails() {
-    this.router.navigateByUrl('/tabs/chef-profile');
+  getAvailableChefs() {
+
+    let params = {
+      location: {
+        latitude: 0,
+        longitude: 0
+      },
+      time: {
+        bookingStartTime: "2019-04-20T12:00:00.00",
+        bookingEndTime: "2019-04-20T14:30:00.00"
+      }
+    }
+
+    this.selectionService.fetchChefs(params.location, params.time).subscribe((resp) => {
+      this.availableChefs = resp;
+      console.log("available chefs", this.availableChefs);
+      this.convertJSONToArray(this.availableChefs);
+      this.dataLoadComplete = true;
+    })
+
+
+  }
+
+  openChefDetails(chefId) {
+
+    this.router.navigate(['/tabs/chef-profile'], {
+      queryParams: {
+        chefDetails: chefId
+      }
+    });
   }
 
 }

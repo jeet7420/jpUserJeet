@@ -42,24 +42,29 @@
     </div>
   </div>
   <ion-list class="p-list">
-    <ion-item lines="none" *ngFor="let chef of availableChefs" (click)="openChefDetails()">
-        <ion-thumbnail>
-          <img src="../../assets/products/product-0.jpg">
-        </ion-thumbnail>
-        <ion-label class="detail" text-wrap>
-          <h5>{{chef?.chefFullName}}</h5>
-          <p>{{chef?.comments}}</p>
-          <!-- <div class="offer">
-            <img src="../../assets/images/food.svg" />
-            <span class="off">Chicken Butter masala, Kheer</span>
-          </div> -->
-          <div class="bottom-detail flex-mode">
-            <div class="ratting">
-              <ion-icon name="star"></ion-icon>
-              <span>{{chef?.averageRating}}</span>
-            </div>
+    <ion-item lines="none" *ngFor="let chef of allChefsArray" (click)="openChefDetails(chef?.chefId)">
+      <ion-thumbnail *ngIf="dataLoadComplete">
+        <img src={{chefImageUrl}}{{chef?.imageUrl}}>
+      </ion-thumbnail>
+      <ion-label class="detail" text-wrap>
+        <h5>{{chef?.chefFullName}}</h5>
+        <!-- <p>{{chef?.comments}}</p> -->
+        <!-- <p>
+          <img src="../../assets/images/food.svg" />
+          <span class="off" *ngFor="let bestPrep of chef?.bestPrepList let i= index">{{bestPrep}}
+            <span *ngIf=" i < chef?.bestPrepList.length-1">, </span></span>
+        </p> -->
+        <p>Specilizes in : {{chef?.specialization}}</p>
+        <p>Can Speak: <span class="off" *ngFor="let language of chef?.languageList let i= index">{{language}}
+            <span *ngIf=" i < chef?.languageList.length-1">, </span></span> </p>
+        <div class="bottom-detail flex-mode">
+          <div class="ratting">
+            <ion-icon name="star"></ion-icon>
+            <span>{{chef?.averageRating}}</span>
+            <span style="text-align: right">Min booking cost: {{chef?.bookingCost}}</span>
           </div>
-        </ion-label>
+        </div>
+      </ion-label>
 
     </ion-item>
 

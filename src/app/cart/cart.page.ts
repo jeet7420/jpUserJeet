@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController, ModalController } from '@ionic/angular';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { PopupIngredientsPage } from '../popup-ingredients/popup-ingredients.page';
 import { CartService } from '../services/cart.service';
 import { PaymentHandlerService } from '../services/payment-handler.service';
+import { BookingService } from '../services/booking.service';
+import { Storage } from '@ionic/storage';
+import { IMAGE_REPO } from 'src/environments/environment';
 
 @Component({
   selector: 'app-cart',
@@ -16,12 +19,18 @@ export class CartPage implements OnInit {
   totalAmount: number;
   minimumOrderAmount: number;
   payableAmount: number;
+  chefDetails: any;
+  dishImageUrl = IMAGE_REPO + 'dish/';
+  chefImageUrl = IMAGE_REPO + 'chef/';
   constructor(
     private alertController: AlertController,
     private modalController: ModalController,
     private router: Router
     , private cartService: CartService
     , private paymentHandler: PaymentHandlerService
+    , private bookingService: BookingService
+    , private storage: Storage
+    , private route: ActivatedRoute
   ) {
     // this.cart = [0];
     // console.log('length of this.cart', this.cart.length);
@@ -39,9 +48,9 @@ export class CartPage implements OnInit {
 
   refreshCartInfo() {
     this.cart = this.cartService.getCart();
-    let chefDetails = this.cartService.gerChefDetails();
-    if (chefDetails) {
-      this.minimumOrderAmount = chefDetails.minimumOrderAmount;
+    this.chefDetails = this.cartService.getChefDetails();
+    if (this.chefDetails) {
+      this.minimumOrderAmount = this.chefDetails.bookingCost;
       this.totalAmount = this.cartService.getCartTotal();
       if (this.minimumOrderAmount > this.totalAmount) {
         this.payableAmount = this.minimumOrderAmount
@@ -77,6 +86,15 @@ export class CartPage implements OnInit {
     await alert.present();
   }
 
+  async invokeBookingHandler() {
+    //create booking payload
+    const userId = await this.storage.get('loggedInUser');
+
+
+    //this.bookingService.createBooking()
+
+  }
+
   invokePaymentHandler() {
 
     let paymentObject = {
@@ -86,9 +104,6 @@ export class CartPage implements OnInit {
       customerPhone: '7337367762'
     };
     this.paymentHandler.payWithRazor(paymentObject);
-
-    
-
   }
 
 

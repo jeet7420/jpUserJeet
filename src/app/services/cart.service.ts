@@ -11,12 +11,11 @@ export class CartService {
   constructor() { }
   chefDetails: any ={};
 
-  setChefDetails(chefId, minimumOrderAmount) {
-    this.chefDetails.chefId = chefId;
-    this.chefDetails.minimumOrderAmount = minimumOrderAmount;
+  setChefDetails(chefDetails) {
+    this.chefDetails = chefDetails;
   }
 
-  gerChefDetails() {
+  getChefDetails() {
     return this.chefDetails;
   }
 
@@ -37,7 +36,7 @@ export class CartService {
       this.cartDishes.push(dish);
     }
 
-    //console.log(this.cartDishes);
+    console.log(this.cartDishes);
 
   }
 
@@ -52,8 +51,12 @@ export class CartService {
   getCartTotal() {
     let sum = 0;
     for (var i = 0; i < this.cartDishes.length; i++) {
-      sum += this.cartDishes[i].dishCostPerPerson * this.cartDishes[i].noOfPeople;
+      sum += this.cartDishes[i].dishCost * this.cartDishes[i].noOfPeople;
     }
     return sum;
+  }
+
+  clearCart(){
+    this.cartDishes = [];
   }
 }

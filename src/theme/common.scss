@@ -278,6 +278,9 @@ ion-header{
 .custom-alert-box.phone-popup .alert-wrapper:before {
     background:url("assets/images/phone-popup.svg") center center / cover no-repeat;
 }
+.custom-alert-box.clear-cart-popup .alert-wrapper:before {
+    background:url("assets/images/warning.svg") center center / cover no-repeat;
+}
 .custom-alert-box.detail-popup .alert-wrapper:before {
     background:url("assets/images/popup-img.svg") center center / cover no-repeat;
 }
