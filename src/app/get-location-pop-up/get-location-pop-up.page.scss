@@ -1,0 +1,48 @@
+page-get-location-pop-up {
+
+    #map {
+      height: 90%;
+    }
+    .my-width{
+      width:100px;
+      align-self: flex-end
+    }
+}
+
+.rectangleGetCurrentLocation {
+  height: 70px;
+  width: 350px;
+  background-color: transparent;
+  outline-style: auto;
+  outline-color: rgb(143, 143, 143);
+  outline-width: thin;
+  outline-style: solid;
+  margin-top: 30px;
+  margin-right: 20px;
+}
+
+.rectangleSavedAddresses {
+  height: 350px;
+  width: 350px;
+  background-color: transparent;
+  outline-style: auto;
+  outline-color: rgb(143, 143, 143);
+  outline-width: thin;
+  outline-style: solid;
+  margin-top: 20px;
+  margin-right: 20px;
+}
+
+#wrapper {
+  background-color: transparent; /* for visualization purposes */
+  text-align: center;
+}
+#yourdiv {
+  background-color: transparent; /* for visualization purposes */
+  display: inline-block;
+}
+
+.button {
+  background-color: transparent;
+  margin-top: 15px
+}

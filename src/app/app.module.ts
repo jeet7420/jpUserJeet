@@ -4,7 +4,8 @@ import { RouteReuseStrategy } from '@angular/router';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpConfigInterceptor } from './services/httpConfig.interceptor';
 
-import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
+import { IonicModule, IonicRouteStrategy, Config } from '@ionic/angular';
+import { IonicPageModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
@@ -25,6 +26,8 @@ import { IonicRatingModule } from 'ionic-rating';
 import { PopupIngredientsPage } from "./popup-ingredients/popup-ingredients.page";
 import { IonicStorageModule } from '@ionic/storage';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
+import { GooglePlacesAutocompleteComponentModule } from 'ionic2-google-places-autocomplete';
+import { GetLocationPopUpPageModule } from './get-location-pop-up/get-location-pop-up.module';
 
 @NgModule({
   declarations: [
@@ -42,6 +45,8 @@ import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
     FontAwesomeModule,
     IonicRatingModule,
     HttpClientModule,
+    GooglePlacesAutocompleteComponentModule,
+    GetLocationPopUpPageModule,
     IonicStorageModule.forRoot({ name: '__jppdb' })
   ],
   providers: [

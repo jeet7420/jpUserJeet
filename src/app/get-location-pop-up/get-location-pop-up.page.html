@@ -1,0 +1,51 @@
+<ion-header>  
+
+      <ion-title></ion-title> 
+      <ion-toolbar>
+      <ion-buttons end>
+        <ion-button d="btn2" ion-button small color="black" class="my-width" (click)="CloseModal()">Close</ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  <ion-toolbar>
+    <ion-searchbar [(ngModel)]="autocomplete.input" (ionInput)="updateSearchResults()" placeholder="Search for a place"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list [hidden]="autocompleteItems.length == 0">
+      <ion-item *ngFor="let item of autocompleteItems" tappable (click)="selectSearchResult(item)">
+        {{item.description}}
+      </ion-item>
+</ion-list>
+
+<body>
+  <div id="wrapper">
+    <div class="rectangleGetCurrentLocation" id="yourdiv">
+        <ion-button class="button" style="color:black" fill=clear>Get Current Location</ion-button>
+    </div>
+  </div>
+  
+  <div id="wrapper">
+    <div class="rectangleSavedAddresses" id="yourdiv">
+      <app-saved-address *ngFor="let loc of locArr" [location]="loc"></app-saved-address>
+    </div>
+  </div>
+
+</body>
+
+ <!--<body>
+        <div id="map" style="width: 100%; height: 100%; position: absolute;">
+    <div id='map'>         
+    </div>
+    </div>
+  </body>-->
+   
+</ion-content>
+
+<ion-footer no-shadow>
+    <ion-toolbar>
+        <ion-buttons end>
+      <ion-button d="btn1" ion-button small color="black" class="my-width" (click)="SaveSelectedPlace()">Save</ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-footer>

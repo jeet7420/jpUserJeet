@@ -1,0 +1,20 @@
+<ion-content>
+    <div>
+      <form [formGroup]="addressForm" (ngSubmit)="saveAddress()">
+        <ion-item>
+          <ion-input formControlName="flatNo" type="text" class=text-input placeholder="Flat No"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input formControlName="flatName" type="text" class=text-input placeholder="Flat Name"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input formControlName="area" type="text" class=text-input placeholder="Area"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input formControlName="landmark" type="text" class=text-input placeholder="Landmark"></ion-input>
+        </ion-item><br/>
+  
+        <ion-button no-margin type="submit" expand="block" strong="true">SAVE ADDRESS</ion-button>
+      </form>
+    </div>
+  </ion-content>

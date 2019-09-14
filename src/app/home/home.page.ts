@@ -1,10 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+//import { ModalController, AlertController } from 'ionic-angular';
 import { ModalController, AlertController } from '@ionic/angular';
+import { GetLocationPopUpPage } from '../get-location-pop-up/get-location-pop-up.page';
 import { PopupsPage } from '../popups/popups.page';
 import { Chef } from '../modals/Chef';
 import { Router } from '@angular/router';
 import { SelectionService } from '../services/selection.service';
 import { IMAGE_REPO } from 'src/environments/environment';
+import { LocationService} from 'src/app/services/location.service';
 
 @Component({
   selector: 'app-home',
@@ -12,12 +15,20 @@ import { IMAGE_REPO } from 'src/environments/environment';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
+  private location: string;
   slider: any;
   availableChefs: any;
   allChefsArray: any = [];
   dataLoadComplete = false;
 
   chefImageUrl = IMAGE_REPO+'chef/';
+  //availableChefs: Chef[];
+  private _bookingTimeDesc = '';
+  private _addressDesc = '';
+  private _lattitude = '';
+  private _longitude = '';
+  private _bookingStartTime;
+  private _bookingEndTime: string = ""; 
   //Configuration for each Slider
   sliderOptions = {
     initialSlide: 0,
@@ -39,7 +50,8 @@ export class HomePage implements OnInit {
   constructor(public modalController: ModalController,
     public alertController: AlertController,
     private router: Router
-    , private selectionService: SelectionService) {
+    , private selectionService: SelectionService
+    , private locationService: LocationService) {
     this.slider = {
       isBeginningSlide: true,
       isEndSlide: false,
@@ -138,6 +150,25 @@ export class HomePage implements OnInit {
   }
 
   ngOnInit() {
+    if(this.locationService.getSelectedLocation()==null) {
+      this.location="Location";
+      console.log(this.location);
+    }
+    else {
+      this.location=this.locationService.getSelectedLocation().displayAddress;
+      console.log(this.location);
+    }
+  }
+
+  ionViewDidEnter() {
+    if(this.locationService.getSelectedLocation()==null) {
+      this.location="Location";
+      console.log(this.location);
+    }
+    else {
+      this.location=this.locationService.getSelectedLocation().displayAddress;
+      console.log(this.location);
+    }
   }
 
 
@@ -181,6 +212,11 @@ export class HomePage implements OnInit {
         chefDetails: chefId
       }
     });
+  }
+
+  showAddressModal() {
+    console.log("check");
+    this.router.navigateByUrl('/tabs/getLocationPopup');
   }
 
 }

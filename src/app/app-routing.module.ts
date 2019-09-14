@@ -20,7 +20,11 @@ const routes: Routes = [
   { path: 'profile', loadChildren: './profile/profile.module#ProfilePageModule' },
   { path: 'home', loadChildren: './home/home.module#HomePageModule' },
   { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
-  { path: 'popup-ingredients', loadChildren: './popup-ingredients/popup-ingredients.module#PopupIngredientsPageModule' },  { path: 'booking-details', loadChildren: './booking-details/booking-details.module#BookingDetailsPageModule' },
+  { path: 'popup-ingredients', loadChildren: './popup-ingredients/popup-ingredients.module#PopupIngredientsPageModule' },
+  { path: 'booking-details', loadChildren: './booking-details/booking-details.module#BookingDetailsPageModule' },
+  { path: 'get-location-pop-up', loadChildren: './get-location-pop-up/get-location-pop-up.module#GetLocationPopUpPageModule' },
+  { path: 'get-address', loadChildren: './get-address/get-address.module#GetAddressPageModule' }
+
 
 
 ];
@@ -32,3 +36,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule {}
+

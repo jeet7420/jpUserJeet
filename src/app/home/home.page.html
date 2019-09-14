@@ -2,7 +2,7 @@
   <ion-toolbar>
     <ion-title slot="start">
       <img src="../../assets/images/location-home.svg" />
-      <ion-label class="currenct-page">Location</ion-label>
+      <ion-label class="currenct-page" (click)=showAddressModal()>{{location}}</ion-label>
     </ion-title>
     <ion-label (click)="generalPopup();" slot="end">
       <img src="../../assets/images/time.svg" />
