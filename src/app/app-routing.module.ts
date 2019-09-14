@@ -19,7 +19,9 @@ const routes: Routes = [
   { path: 'profile', loadChildren: './profile/profile.module#ProfilePageModule' },
   { path: 'home', loadChildren: './home/home.module#HomePageModule' },
   { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
-  { path: 'otp', loadChildren: './otp/otp.module#OtpPageModule' }
+  { path: 'otp', loadChildren: './otp/otp.module#OtpPageModule' },  
+  { path: 'get-location-pop-up', loadChildren: './get-location-pop-up/get-location-pop-up.module#GetLocationPopUpPageModule' },
+  { path: 'get-address', loadChildren: './get-address/get-address.module#GetAddressPageModule' }
 
 
 ];

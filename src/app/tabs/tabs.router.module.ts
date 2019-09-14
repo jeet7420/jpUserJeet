@@ -19,6 +19,26 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'getLocationPopup',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../get-location-pop-up/get-location-pop-up.module').then(m => m.GetLocationPopUpPageModule)
+          }
+        ]
+      },
+      {
+        path: 'getAddress',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../get-address/get-address.module').then(m => m.GetAddressPageModule)
+          }
+        ]
+      },
+      {
         path: 'cart',
         children: [
           {

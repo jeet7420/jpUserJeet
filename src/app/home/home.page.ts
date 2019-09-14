@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+//import { ModalController, AlertController } from 'ionic-angular';
 import { ModalController, AlertController } from '@ionic/angular';
+import { GetLocationPopUpPage } from '../get-location-pop-up/get-location-pop-up.page';
 import { PopupsPage } from '../popups/popups.page';
 import { Chef } from '../modals/Chef';
 import { Router } from '@angular/router';
+import { LocationService} from 'src/app/services/location.service';
 
 @Component({
   selector: 'app-home',
@@ -10,8 +13,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
+  private location: string;
   slider: any;
   availableChefs: Chef[];
+  private _bookingTimeDesc = '';
+  private _addressDesc = '';
+  private _lattitude = '';
+  private _longitude = '';
+  private _bookingStartTime;
+  private _bookingEndTime: string = ""; 
   //Configuration for each Slider
   sliderOptions = {
     initialSlide: 0,
@@ -32,6 +42,7 @@ export class HomePage implements OnInit {
 
   constructor(public modalController: ModalController,
     public alertController: AlertController,
+    private locationService: LocationService,
     private router: Router) {
     this.slider = {
       isBeginningSlide: true,
@@ -130,6 +141,25 @@ export class HomePage implements OnInit {
   }
 
   ngOnInit() {
+    if(this.locationService.getSelectedLocation()==null) {
+      this.location="Location";
+      console.log(this.location);
+    }
+    else {
+      this.location=this.locationService.getSelectedLocation().displayAddress;
+      console.log(this.location);
+    }
+  }
+
+  ionViewDidEnter() {
+    if(this.locationService.getSelectedLocation()==null) {
+      this.location="Location";
+      console.log(this.location);
+    }
+    else {
+      this.location=this.locationService.getSelectedLocation().displayAddress;
+      console.log(this.location);
+    }
   }
 
 
@@ -159,6 +189,11 @@ export class HomePage implements OnInit {
 
   openChefDetails() {
     this.router.navigateByUrl('/tabs/chef-profile');
+  }
+
+  showAddressModal() {
+    console.log("check");
+    this.router.navigateByUrl('/tabs/getLocationPopup');
   }
 
 }
